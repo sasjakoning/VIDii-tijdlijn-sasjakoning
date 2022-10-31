@@ -23,6 +23,28 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 # Je plan
 
 <details open>
+  <summary>Eerste ideeen</summary>
+
+  Ter voorbereiding op dit project heb ik een lijst gemaakt van mogelijk interessante karakters om te gebruiken voor de tijdlijn. Hierbij heb ik gekeken naar karakters die een rijke historie hebben en mijn interesses trekken.
+
+  Hierbij was bij mij nog wat onduidelijkheid over wat voor soort tijdlijn ik kon gaan maken. Of deze op basis moest van echte tijd of fictieve tijd zoals in een serie. 
+
+  - Tom en Jerry
+  - Mickey Mouse
+  - Donald Duck
+  - Minecraft (Steve)
+  - Pac Man
+  - Shrek
+  - Simpsons (Homer)
+  - Scooby Doo (Scooby)
+  - Adventure Time (Marceline)
+  - Clippy (Office Assistant)
+  - Game Of Thrones (Bijv. Deanerys)
+  - Avatar (Bijv. Aang)
+ 
+</details>
+
+<details open>
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
 
   ### De eerste versie/schets:
