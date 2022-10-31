@@ -41,6 +41,8 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
   - Clippy (Office Assistant)
   - Game Of Thrones (Bijv. Deanerys)
   - Avatar (Bijv. Aang)
+  - Kim Possible
+  - Fairy Odd Parents
  
 </details>
 
