@@ -52,7 +52,7 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
   ### De eerste versies/schetsen:
   Voor mijn eerste schetsen was ik uitgekomen op drie verschillende thema's. Op deze ideeen heb ik feedback gekregen van Ine van den Hoven.
 
-  1. **Donald Duck**
+  1: **Donald Duck**
   <br/>
   Een stripverhaal pagina over donald duck.
   Hierin zouden typische "donald" elementen staan zoals zijn neefjes, oom, "temperment" etc. Als kind heb ik veel stripverhalen over Donald Duck gelezen waardoor dit karakter nostalgische waarde heeft.
@@ -61,7 +61,7 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
   **Feedback** 
   Het idee om de tijdlijn af te beelden in een stripverhaal was sterk. Meeste mensen kennen Donald Duck namelijk van de stripverhalen. Er zouden animaties, videos en informatie kunnen worden getoond wanneer de gebruiker om een strip paneel klikt.
 
-  1. Tom and Jerry
+  2: **Tom and Jerry**
   <br/>
   ik ben met Tom and Jerry opgegroeid. Bijna elke episode ken ik wel uit mijn hoofd. In deze schets het ik een typische Tom and Jerry setting gemaakt waarbij de gebruiker Tom (en Jerry) volgt door het huis op een komische en "slapstick" manier.   <br/>Wat Tom echt Tom maakt is Jerry. Hierdoor is het lastig om het alleen over Tom te houden. Dit zou dan een uitzondering op de opdracht zijn met twee karakters. (of twee karakters met focus op Tom)
   <img src="./images/schets-tomandjerry1.jpg" width="375px" alt="eerste versie/schets Tom and Jerry">
@@ -70,7 +70,7 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
   **Feedback**
   Het idee dat Deze tijdlijn zich afspeeld in een huis is sterk omdat Tom and Jerry zich daar vaak in afspeeld. Informatie in dit huis kan dan bijvoorbeeld worden gegeven door een pop up of in schilderijen waar de gebruiker interactie mee heeft. Ook kan ik meer kenmerkende dingen van Tom and Jerry terug laten komen in onder andere de achtergronden.
 
-  1. Scooby Doo
+  3: **Scooby Doo**
   <br/>
   Scooby Doo heeft vele vormen van entertainment gezien. Stripverhalen, cartoons, films, live action etc. In deze schets heb ik een "haunted mansion" gemaakt waar Scooby Doo op een komische manier zijn tijdlijn laat zien. Dit maar het uniek voor Scooby Doo door zijn typische animaties en objecten zoals Scooby Snacks.
   <img src="./images//schets-scoobydoo1.jpg" width="375px" alt="eerste versie/schets Scooby Doo">
