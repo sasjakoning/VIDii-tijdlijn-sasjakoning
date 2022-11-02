@@ -53,7 +53,6 @@ main {
 }
 
 main > ul {
-  width: 100vw;
   list-style: none;
   padding: 0;
   position: relative;
@@ -87,6 +86,9 @@ main > ul > li:nth-of-type(4) {
 
 /* ... */
 
+
+
+
 /* Mobile devices */
 @media  screen and (min-width: 576px) {
   main > ul {
@@ -94,12 +96,18 @@ main > ul > li:nth-of-type(4) {
   }
 }
 
+
+
+
 /* Tablets */
 @media  screen and (min-width: 768px) {
   main > ul {
     width: 50em;
   }
 }
+
+
+
 
 /* Desktops */
 @media  screen and (min-width: 992px) {
@@ -111,6 +119,30 @@ main > ul > li:nth-of-type(4) {
     zoom 2s 1s ease-out forwards,
     move 2s 4s ease-in-out forwards;
   }
+
+  /* CAMERA ANIMATION */
+
+  @keyframes zoom {
+    from {
+      scale: 1;
+      transform: translate(0em, 0em);
+    }
+    to {
+      scale: 2;
+      transform: translate(10em, 10em);
+    }
+  }
+
+  /* @keyframes move {
+    from {
+      transform: translate(10em, 10em);
+    }
+    to {
+      transform: translate(-15em, 10em);
+    }
+  } */
+
+  /* --- */
 
   /* TOM */
   main > ul > li > section > div:nth-of-type(1){
@@ -182,27 +214,4 @@ main > ul > li:nth-of-type(4) {
 
   /* --- */
 
-  /* CAMERA ANIMATION */
-
-  @keyframes zoom {
-    from {
-      scale: 1;
-      transform: translate(10em, 10em);
-    }
-    to {
-      scale: 2;
-      transform: translate(10em, 10em);
-    }
-  }
-
-  @keyframes move {
-    from {
-      transform: translate(10em, 10em);
-    }
-    to {
-      transform: translate(-15em, 10em);
-    }
-  }
-
-  /* --- */
 }
