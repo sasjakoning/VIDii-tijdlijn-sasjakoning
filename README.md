@@ -89,6 +89,42 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 </details>
 
 
+## Tijdlijn Tom and Jerry
+
+- 1940
+  - Start Tom and Jerry, MGM en Hanna Barbera. In de eerste episode werken Tom en Jerry nog Jasper en Jinx genoemd.
+- 1954
+  - MGM halveerd het budget van Tom and Jerry, animatie kwaliteit daalt
+- 1957
+  - Door té hoge kostten word de studio voor Tom and Jerry gesloten
+- 1958
+  - Releases van shorts gestopt
+- 1961
+  - MGM outsourced Tom and Jerry animatie naar Gene Deitch die eigenlijk de cartoons helemaal niet leuk vond. Kwaliteit gaat achteruit.
+- 1962
+  - Laatste short van het contract met Gene Deitch
+- 1963
+  - Animatie origine terug naar America. Overname Chuck Jones. Deze hield meer een eigen stijl aan.
+- 1967
+  - Einde productie animatie van Chuck Jones
+- 1975
+  - Start "Tom and Jerry Show", Hanna Barbera. Alle geweld is weg en Tom and Jerry zijn nu beste vrienden. 
+- 1980
+  - Start "Tom and Jerry Comedy Show" Show met meerdere karakters, Voor productie waren Filmation ingehuurd. Zij gingen meer voor quantity dan quality. Veel herbuik van animatie en minder frames per seconde. Simplelere muziek. Fans vonden het slecht.
+- 1990-1993
+  - Start "To and Jerry Kids" met baby versies van Tom en Jerry. Animatie en muziek waren van hogere kwaliteit. 65 episodes.
+- 1992
+  - Release "Tom and Jerry the movie" gemaakt door Film Roman. De film flopte echter hard.
+- 2001
+  - Release "Tom and Jerry The Mansion Cat" Overname Hanna Barbera door Warner Brothers, tiend agen voor de dood van Hanna
+- 2005
+  - Laatste release van een short, "The Karate Guard". Een aantal maanden na release overleed Barbera.
+- 2006-2008
+  - Start "Tom and Jerry Tales" een Cartoon Network serie met 26 episodes van een half uur.
+- 2014
+  - Start "Tom and Jerry Show" op Cartoon Network
+- 2021
+  - Release Tom and Jerry film in theaters
 
 
 ## Voortgang/Feedback 1
