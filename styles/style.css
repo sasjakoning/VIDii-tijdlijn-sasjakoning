@@ -39,7 +39,170 @@ h1 {
   color:var(--color-headings);
 }
 
+body {
+  width: 100vw;
+  background-color: beige;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main > ul {
+  width: 100vw;
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
+main > ul > li {
+  position: relative;
+}
+
+main > ul > li > img {
+  width: 100%;
+  transform-origin: top center;
+}
+
+main > ul > li:nth-of-type(1) {
+  
+}
+
+main > ul > li:nth-of-type(2) {
+  transform: translateY(-2em); 
+}
+
+main > ul > li:nth-of-type(3) {
+  transform: translateY(-2.85em);
+}
+
+main > ul > li:nth-of-type(4) {
+  transform: translateY(-3.9em);
+}
+
 
 /* ... */
 
+/* Mobile devices */
+@media  screen and (min-width: 576px) {
+  main > ul {
+    width: 30em;
+  }
+}
 
+/* Tablets */
+@media  screen and (min-width: 768px) {
+  main > ul {
+    width: 50em;
+  }
+}
+
+/* Desktops */
+@media  screen and (min-width: 992px) {
+  main > ul {
+    width: 60em;
+    scale: 1;
+    transform: translate(0em, 0em);
+    animation: 
+    zoom 2s 1s ease-out forwards,
+    move 2s 4s ease-in-out forwards;
+  }
+
+  /* TOM */
+  main > ul > li > section > div:nth-of-type(1){
+    width: 5em;
+    height: 4em;
+    /* background-color: darkgray; */
+    position: absolute;
+    bottom: 11%;
+    left: 9%;
+    
+    background-image: url(../images/testgif.gif);
+    background-size: 120%;
+    background-position: 0% -140%;
+    background-repeat: no-repeat;
+
+    animation: tom-1-running 5s 3s cubic-bezier(.24,0,1,.99) forwards;
+  }
+
+  /* JERRY */
+  main > ul > li > section > div:nth-of-type(2){
+    width: 1.5em;
+    height: 1.5em;
+    background-color: brown;
+    position: absolute;
+    bottom: 11%;
+    left: 9%;
+
+    animation: jerry-1-running 5s 2s cubic-bezier(.24,0,1,.99) forwards;
+  }
+
+  .box {
+    width: 5em;
+    height: 5em;
+    background-color: rgb(226, 177, 114);
+    position: absolute;
+
+    bottom: 11%;
+    left:9%;
+    z-index: 10;
+  }
+
+  /* TOM ANIMATION */
+
+  @keyframes tom-1-running {
+    from {
+      left: 9%;
+    }
+    to {
+      left: 84%;
+    }
+  }
+
+  /* --- */
+
+  /* JERRY ANIMATION */
+
+  @keyframes jerry-1-running {
+    from {
+      left: 9%;
+    }
+    to {
+      left: 90%;
+    }
+  }
+
+  /* --- */
+
+  /* OTHER ANIMATION */
+
+  /* --- */
+
+  /* CAMERA ANIMATION */
+
+  @keyframes zoom {
+    from {
+      scale: 1;
+      transform: translate(10em, 10em);
+    }
+    to {
+      scale: 2;
+      transform: translate(10em, 10em);
+    }
+  }
+
+  @keyframes move {
+    from {
+      transform: translate(10em, 10em);
+    }
+    to {
+      transform: translate(-15em, 10em);
+    }
+  }
+
+  /* --- */
+}
