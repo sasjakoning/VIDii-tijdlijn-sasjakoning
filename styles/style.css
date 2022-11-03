@@ -18,14 +18,14 @@ button:not([disabled]) {
 
 
 
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-headings:crimson;
+  /* --x-axis: 11cqi;
+  --y-axis: 95cqb; */
 }
 
 
@@ -186,47 +186,77 @@ main > ul > li:nth-of-type(4) {
   /* --- */
 
   /* JERRY */
-  main > section > div:nth-of-type(2) > span{
+
+  main > section > div:nth-of-type(2) {
+    /* transform: translate(calc(10cqi - 1.5em), calc(95cqb - 1.5em)); */
+    display: inline-block;
+    offset-path: path("M90,290 L450,290 C450,200 500,100 570,170 L650,170 C750,170 750,290 750,290 L860,290");
+    offset-distance: 0%;
+    background-color: aqua;
+    stroke: black;
     width: 1.5em;
     height: 1.5em;
-    background-color: brown;
-    position: absolute;
-    transform-origin: 20% 20%;
-
-    transform: translate(calc(10cqi - 1.5em), calc(95cqb - 1.5em));
   }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  /* main > section > div:nth-of-type(2)::after{
+    content: "";
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+  } */
 
   /* JERRY ANIMATION */
 
-  .jerryContainer-1 {
-    animation:jerryContainer-1-move forwards 2s, jerryContainer-1-jump 2s 3s forwards linear;
-  }
   .jerry-1 {
-    animation: jerry-1 2s 3s forwards ease-out;
+    animation: jerry-1-move 1s forwards cubic-bezier(0.02, 0.01, 0.21, 1), jerry-1-jump .7s 1s cubic-bezier(0.02, 0.01, 0.21, 1) forwards;
   }
 
-  /* @keyframes jerryContainer-1-jump {
-    to {
-      transform: translateX(calc(64cqi - 1.5em));
+  @keyframes jerry-1-move {
+    0% {
+      offset-distance: 0%;
+    }
+    100% {
+      offset-distance: 37%;
     }
   }
 
-  @keyframes jerry-1 {
+  @keyframes jerry-1-jump {
+    0% {
+      offset-distance: 37%;
+    }
+    100% {
+      offset-distance: 67%;
+    }
+  }
+
+  .jerry-2 {
+    animation: jerry-2-jump 2s forwards cubic-bezier(0.02, 0.01, 0.21, 1);
+  }
+
+  @keyframes jerry-2-jump {
+    0% {
+      offset-distance: 67%;
+    }
+    100% {
+      offset-distance: 100%;
+    }
+  }
+
+  /* @keyframes jerry-1 {
+    from {
+      transform: translate(calc(10cqi - 1.5em), calc(95cqb - 1.5em));
+    }
     to {
-      transform: translateY(calc(64cqb - 1.5em));
+      transform: translate(calc(52cqi - 1.5em), calc(95cqb - 1.5em));
     }
   } */
-
-  @keyframes jerryContainer-1-move {
-    from {
-      transform: translateX(calc(10cqi - 1.5em));
-      transform: translateY(calc(95cqi - 1.5em));
-    }
-    to {
-      transform: translateX(calc(52cqi - 1.5em));
-      transform: translateY(calc(95cqi - 1.5em));
-    }
-  }
 
   /* --- */
 
