@@ -9,6 +9,7 @@
 
 body {
   margin:0;
+  font-family: sans-serif;
 }
 
 button:not([disabled]) {
@@ -67,9 +68,9 @@ main > ul > li > img {
   transform-origin: top center;
 }
 
-main > ul > li:nth-of-type(1) {
+/* main > ul > li:nth-of-type(1) {
   
-}
+} */
 
 main > ul > li:nth-of-type(2) {
   transform: translateY(-2em); 
@@ -111,10 +112,29 @@ main > ul > li:nth-of-type(4) {
 
 /* Desktops */
 @media  screen and (min-width: 992px) {
-  main > ul {
+  main {
+    transform: translateY(10em);
     width: 60em;
+  }
+
+  /* Tom and jerry frame */
+  main > section {
+    container-type: size;
+    width: 100%;
+    height: 20em;
+    background-color: rgba(255, 0, 0, 0.248);
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+
+    transform: translateY(04em);
+  }
+
+  /* house */
+  main > ul {
+    width: 100%;
     scale: 1;
-    transform: translate(0em, 0em);
+    /* transform: translate(0em, 0em); */
     animation: 
     zoom 2s 1s ease-out forwards,
     move 2s 4s ease-in-out forwards;
@@ -122,7 +142,7 @@ main > ul > li:nth-of-type(4) {
 
   /* CAMERA ANIMATION */
 
-  @keyframes zoom {
+  /* @keyframes zoom {
     from {
       scale: 1;
       transform: translate(0em, 0em);
@@ -131,7 +151,7 @@ main > ul > li:nth-of-type(4) {
       scale: 2;
       transform: translate(10em, 10em);
     }
-  }
+  } */
 
   /* @keyframes move {
     from {
@@ -145,69 +165,121 @@ main > ul > li:nth-of-type(4) {
   /* --- */
 
   /* TOM */
-  main > ul > li > section > div:nth-of-type(1){
+  main > section > div:nth-of-type(1){
     width: 5em;
-    height: 4em;
-    /* background-color: darkgray; */
+    height: 5em;
+    background-color: darkgray;
     position: absolute;
-    bottom: 11%;
-    left: 9%;
+
+    transform: translate(calc(0cqi - 5em), calc(0cqb - 5em));
     
-    background-image: url(../images/testgif.gif);
-    background-size: 120%;
+    /* background-image: url(../images/testgif.gif); */
+    /* background-size: 120%;
     background-position: 0% -140%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 
     animation: tom-1-running 5s 3s cubic-bezier(.24,0,1,.99) forwards;
   }
 
+  /* TOM ANIMATION */
+
+  /* --- */
+
   /* JERRY */
-  main > ul > li > section > div:nth-of-type(2){
+  main > section > div:nth-of-type(2) > span{
     width: 1.5em;
     height: 1.5em;
     background-color: brown;
     position: absolute;
-    bottom: 11%;
-    left: 9%;
+    transform-origin: 20% 20%;
 
-    animation: jerry-1-running 5s 2s cubic-bezier(.24,0,1,.99) forwards;
+    transform: translate(calc(10cqi - 1.5em), calc(95cqb - 1.5em));
   }
 
-  .box {
-    width: 5em;
+  /* JERRY ANIMATION */
+
+  .jerryContainer-1 {
+    animation:jerryContainer-1-move forwards 2s, jerryContainer-1-jump 2s 3s forwards linear;
+  }
+  .jerry-1 {
+    animation: jerry-1 2s 3s forwards ease-out;
+  }
+
+  /* @keyframes jerryContainer-1-jump {
+    to {
+      transform: translateX(calc(64cqi - 1.5em));
+    }
+  }
+
+  @keyframes jerry-1 {
+    to {
+      transform: translateY(calc(64cqb - 1.5em));
+    }
+  } */
+
+  @keyframes jerryContainer-1-move {
+    from {
+      transform: translateX(calc(10cqi - 1.5em));
+      transform: translateY(calc(95cqi - 1.5em));
+    }
+    to {
+      transform: translateX(calc(52cqi - 1.5em));
+      transform: translateY(calc(95cqi - 1.5em));
+    }
+  }
+
+  /* --- */
+
+  /* Painting 1 */
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(1) {
+    width: 6em;
     height: 5em;
+    margin: 0;
     background-color: rgb(226, 177, 114);
     position: absolute;
+    border: .2em solid orange;
+    box-shadow: .1em .1em 0 brown;
+    transform: perspective(20em) rotateY(30deg) rotateX(7deg) rotateZ(4deg);
 
     bottom: 11%;
     left:9%;
     z-index: 10;
   }
 
-  /* TOM ANIMATION */
-
-  @keyframes tom-1-running {
-    from {
-      left: 9%;
-    }
-    to {
-      left: 84%;
-    }
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > img {
+    width: 100%;
   }
 
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > figcaption {
+    position: absolute;
+    top: 0;
+    color: red;
+  }
   /* --- */
 
-  /* JERRY ANIMATION */
+  /* Painting 2 */
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(2) {
+    width: 6em;
+    margin: 0;
+    background-color: rgb(226, 177, 114);
+    position: absolute;
+    border: .2em solid orange;
+    box-shadow: .1em .1em 0 brown;
 
-  @keyframes jerry-1-running {
-    from {
-      left: 9%;
-    }
-    to {
-      left: 90%;
-    }
+    bottom: 23%;
+    left: 60%;
+    z-index: 10;
   }
 
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > img {
+    width: 100%;
+  }
+
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > figcaption {
+    position: absolute;
+    top: 0;
+    color: red;
+  }
   /* --- */
 
   /* OTHER ANIMATION */
