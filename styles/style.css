@@ -113,7 +113,6 @@ main > ul > li:nth-of-type(4) {
 /* Desktops */
 @media  screen and (min-width: 992px) {
   main {
-    transform: translateY(10em);
     width: 60em;
   }
 
@@ -134,7 +133,7 @@ main > ul > li:nth-of-type(4) {
   main > ul {
     width: 100%;
     scale: 1;
-    /* transform: translate(0em, 0em); */
+    transform: translate(-15em, -16em);
     animation: 
     zoom 2s 1s ease-out forwards,
     move 2s 4s ease-in-out forwards;
@@ -310,6 +309,47 @@ main > ul > li:nth-of-type(4) {
     top: 0;
     color: red;
   }
+  /* --- */
+
+  /* closet */
+
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) {
+    width: 8em;
+    height: 11em;
+    background-color: brown;
+    position: absolute;
+    margin: 0;
+
+    top: 18%;
+    right: 39%;
+  }
+
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(1)::before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 97%;
+    background-color: azure;
+    transform: perspective(10em) rotateY(-70deg);
+    
+    top: 2%;
+    left: -7%;
+  }
+
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div {
+    width: 42%;
+    height: 80%;
+    background-color: lightcoral;
+    position: absolute;
+
+    top: 5%;
+    left: 6%;
+  }
+
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div:last-of-type {
+    left: calc(94% - 42%);
+  }
+
   /* --- */
 
   /* OTHER ANIMATION */
