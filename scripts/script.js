@@ -1,4 +1,5 @@
 const painting1 = document.querySelector("main > ul > li:nth-of-type(1) > figure:nth-of-type(1)");
+const painting2 = document.querySelector("main > ul > li:nth-of-type(1) > figure:nth-of-type(2)");
 
 const tom = document.querySelector("main > section:first-of-type > div:first-of-type")
 const jerry = document.querySelector("main > section:first-of-type > div:last-of-type")
@@ -19,6 +20,20 @@ painting1.addEventListener("click", () => {
         console.log("Move character")
         jerry.classList.add("jerry-1")
         painting1Counter = 0;
+
+    }
+})
+
+let painting2Counter = 0;
+
+painting2.addEventListener("click", () => {
+    if(painting2Counter <= 0){
+        console.log("show text")
+        painting2Counter++
+    }else if (painting2Counter >= 1 && jerry.classList.contains("jerry-1")) {
+        console.log("Move character")
+        jerry.classList.add("jerry-2")
+        painting2Counter = 0;
 
     }
 })
