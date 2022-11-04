@@ -45,7 +45,7 @@ body {
   background-color: beige;
   display: grid;
   place-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 main {
@@ -78,6 +78,7 @@ main > ul > li:nth-of-type(2) {
 
 main > ul > li:nth-of-type(3) {
   transform: translateY(-2.85em);
+  z-index: -1;
 }
 
 main > ul > li:nth-of-type(4) {
@@ -114,13 +115,14 @@ main > ul > li:nth-of-type(4) {
 @media  screen and (min-width: 992px) {
   main {
     width: 60em;
+    position: relative;
   }
 
   /* Tom and jerry frame */
   main > section {
     container-type: size;
     width: 100%;
-    height: 20em;
+    height: 90%;
     background-color: rgba(255, 0, 0, 0.248);
     position: absolute;
     z-index: 100;
@@ -133,7 +135,7 @@ main > ul > li:nth-of-type(4) {
   main > ul {
     width: 100%;
     scale: 1;
-    transform: translate(-15em, -16em);
+    transform: translate(0em, 0em);
     animation: 
     zoom 2s 1s ease-out forwards,
     move 2s 4s ease-in-out forwards;
@@ -187,9 +189,8 @@ main > ul > li:nth-of-type(4) {
   /* JERRY */
 
   main > section > div:nth-of-type(2) {
-    /* transform: translate(calc(10cqi - 1.5em), calc(95cqb - 1.5em)); */
     display: inline-block;
-    offset-path: path("M90,290 L450,290 C450,200 500,100 570,170 L650,170 C750,170 750,290 750,290 L860,290");
+    offset-path: path("M90,290 L450,290 C450,200 500,100 570,170 L650,170 C750,170 750,290 750,290 L860,290 860,540 580,530 C560,530 580,530 570,370 560,340 520,350 520,355 L440,355 C400,345 400,345 350,385 L330,385 C310,345 300,375 300,385 L300,385 C250,355 150,305 150,540 C150,510 100,520 100,540 L80,540 80,730 200,730 440,730 C440,670 470,570 560,640 L560,640 C560,640 580,620 600,640 L650,640 C650,640 750,600 750,950 L70,950");
     offset-distance: 0%;
     background-color: aqua;
     stroke: black;
@@ -203,14 +204,6 @@ main > ul > li:nth-of-type(4) {
     position: absolute;
   }
 
-  /* main > section > div:nth-of-type(2)::after{
-    content: "";
-    position: absolute;
-    background-color: red;
-    width: 100%;
-    height: 100%;
-  } */
-
   /* JERRY ANIMATION */
 
   .jerry-1 {
@@ -222,29 +215,48 @@ main > ul > li:nth-of-type(4) {
       offset-distance: 0%;
     }
     100% {
-      offset-distance: 37%;
+      offset-distance: 8.5%;
     }
   }
 
   @keyframes jerry-1-jump {
     0% {
-      offset-distance: 37%;
+      offset-distance: 8.5%;
     }
     100% {
-      offset-distance: 67%;
+      offset-distance: 15%;
     }
   }
 
   .jerry-2 {
-    animation: jerry-2-jump 2s forwards cubic-bezier(0.02, 0.01, 0.21, 1);
+    animation: jerry-2-jump 2s forwards cubic-bezier(0.02, 0.01, 0.21, 1), jerry-2-inwall 2s 2s forwards;
   }
 
   @keyframes jerry-2-jump {
     0% {
-      offset-distance: 67%;
+      offset-distance: 15%;
     }
     100% {
-      offset-distance: 100%;
+      offset-distance: 22.5%;
+    }
+  }
+
+  @keyframes jerry-2-inwall {
+    0% {
+      offset-distance: 22.5%;
+      opacity: 1;
+    }
+    1% {
+      offset-distance: 22.5%;
+      opacity: 0;
+    }
+    99% {
+      offset-distance: 28.5%;
+      opacity: 0;
+    }
+    100% {
+      offset-distance: 28.5%;
+      opacity: 1;
     }
   }
 
@@ -294,10 +306,67 @@ main > ul > li:nth-of-type(4) {
     position: absolute;
     border: .2em solid orange;
     box-shadow: .1em .1em 0 brown;
+    transform-origin: 80% -10%;
+    rotate: 0deg;
+    translate: 0% 0%;
 
     bottom: 23%;
     left: 60%;
     z-index: 10;
+  }
+
+  .painting2-fall {
+    animation: painting2-fall-1 .7s .5s ease-out forwards, painting2-fall-2 1s 1.5s forwards;
+  }
+
+  @keyframes painting2-fall-1 {
+    40% {
+      rotate: -80deg;
+      translate: 0% 0%;
+    }
+    60% {
+      rotate: -30deg;
+      translate: 0% 0%;
+    }
+    70% {
+      rotate: -55deg;
+      translate: 0% 0%;
+    }
+    90% {
+      rotate: -45deg;
+      translate: 0% 0%;
+    }
+    100% {
+      rotate: -50deg;
+      translate: 0% 0%;
+    }
+  }
+
+  @keyframes painting2-fall-2 {
+    0% {
+      rotate: -50deg;
+      translate: 0% 0%;
+    }
+    20%, 60% {
+      rotate: -50deg;
+      translate: 96% 68%;;
+      transform-origin: bottom left;
+    }
+    80% {
+      rotate: 0deg;
+      translate: 96% 68%;
+      transform-origin: bottom left;
+    }
+    90% {
+      rotate: -5deg;
+      translate: 96% 68%;
+      transform-origin: bottom left;
+    }
+    100% {
+      rotate: 0deg;
+      translate: 96% 68%;
+      transform-origin: bottom left;
+    }
   }
 
   main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > img {
@@ -336,7 +405,8 @@ main > ul > li:nth-of-type(4) {
     left: -7%;
   }
 
-  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div {
+  /* closet door left */
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div > span {
     width: 42%;
     height: 80%;
     background-color: lightcoral;
@@ -346,8 +416,147 @@ main > ul > li:nth-of-type(4) {
     left: 6%;
   }
 
-  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div:last-of-type {
+  /* closet door right */
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div > span:last-of-type {
     left: calc(94% - 42%);
+    transform: perspective(10em) rotateY(0deg);
+    transform-origin: right center;
+  }
+
+  .closet-door {
+    animation: closet-door .5s ease-out forwards;
+  }
+
+  @keyframes closet-door {
+    60% {
+      transform: perspective(10em) rotateY(130deg);
+    }
+    80% {
+      transform: perspective(10em) rotateY(110deg);
+    }
+    100% {
+      transform: perspective(10em) rotateY(120deg);
+    }
+  }
+
+  /* --- */
+
+  /* bookshelf */
+
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(2) {
+    width: 10em;
+    height: .5em;
+    background-color: brown;
+    position: absolute;
+    margin: 0;
+    transform-origin: right center;
+    rotate: 0deg;
+
+    top: 30%;
+    left: 18%;
+  }
+
+  .bookshelf-fall {
+    animation: bookshelf-fall .5s linear forwards;
+  }
+
+  @keyframes bookshelf-fall {
+    60% {
+      rotate: -55deg;
+    }
+    80% {
+      rotate: -50deg;
+    }
+    100% {
+      rotate: -55deg;
+    }
+  }
+
+  /* --- */
+
+  /* bowling ball */
+
+  main > ul > li:nth-of-type(2) > div {
+    width: 3em;
+    height: 3em;
+    background-color: black;
+    position: absolute;
+    margin: 0;
+    border-radius: 50%;
+    transform: translate(0%, 0%);
+    z-index: 100;
+
+    top: 14%;
+    left: 19%;
+  }
+
+  .bowlingball-fall {
+    animation: bowlingball-fall 1s .1s ease-in forwards;
+  }
+
+  @keyframes bowlingball-fall {
+    80% {
+      transform: translate(0%, 800%);
+    }
+    90% {
+      transform: translate(0%, 700%);
+    }
+    100% {
+      transform: translate(0%, 800%);
+    }
+  }
+
+  /* --- */
+
+  /* painting3 */
+    main > ul > li:nth-of-type(3) > figure:nth-of-type(1) {
+      width: 7em;
+      height: 6em;
+      margin: 0;
+      background-color: rgb(226, 177, 114);
+      position: absolute;
+      border: .2em solid orange;
+      box-shadow: .1em .1em 0 brown;
+
+      top: 10%;
+      left:25%;
+      z-index: 10;
+    }
+
+    main > ul > li:nth-of-type(3) > figure:nth-of-type(1) > img {
+      width: 100%;
+    }
+  
+    main > ul > li:nth-of-type(3) > figure:nth-of-type(1) > figcaption {
+      position: absolute;
+      top: 0;
+      color: red;
+    }
+    
+  /* --- */
+
+  /* trap door */
+
+  main > ul > li:nth-of-type(3) > figure:nth-of-type(2) {
+    width: 6em;
+    height: 6em;
+    background-color: brown;
+    position: absolute;
+    transform: perspective(20em);
+    perspective-origin: 28% 40%;
+    top: 55%;
+    right: 15%;
+    margin: 0;
+  }
+
+  main > ul > li:nth-of-type(3) > figure:nth-of-type(2) > div {
+    width: 6em;
+    height: 6em;
+    background-color: lightcoral;
+    position: absolute;
+    /* transform-origin: right center; */
+    top: 0%;
+    right: 0%;
   }
 
   /* --- */
