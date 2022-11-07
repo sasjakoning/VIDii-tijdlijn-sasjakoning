@@ -168,7 +168,7 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 
   Onderstaand is een GIF van mijn werk getoond tijdens deze feedback sessie:
   <br>
-  <img src="./readme-images/feedback2.gif" width="375px" alt="gif van website tussentijds">
+  <img src="./readme-images/feedback2.gif" width="675px" alt="gif van website tussentijds">
 
   ### Bevinding 1:
   De pagina is een beetje responsive maar niet zoveel als ik zou willen hebben.
