@@ -296,10 +296,38 @@ main > ul > li:nth-of-type(4) {
     border: .2em solid orange;
     box-shadow: .1em .1em 0 brown;
     transform: perspective(20em) rotateY(30deg) rotateX(7deg) rotateZ(4deg);
+    scale: 1;
 
     bottom: 11%;
     left:9%;
     z-index: 10;
+  }
+
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > button,
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > button {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    position: absolute;
+  }
+
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > button:focus,
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > button:focus {
+    outline: none;
+  }
+
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(1):hover,
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(2):hover {
+    scale: 1.1;
+  }
+
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > button:focus-visible, main > ul > li:nth-of-type(1) > figure:nth-of-type(1):hover,
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > button:focus-visible, main > ul > li:nth-of-type(1) > figure:nth-of-type(2):hover{
+    transition: 100ms;
+    border: .2em solid orange;
+    outline: none;
+    box-shadow: 0 0 1em .5em rgba(255, 255, 0, 0.5);
   }
 
   main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > img {
@@ -322,8 +350,6 @@ main > ul > li:nth-of-type(4) {
     border: .2em solid orange;
     box-shadow: .1em .1em 0 brown;
     transform-origin: 80% -10%;
-    rotate: 0deg;
-    translate: 0% 0%;
 
     bottom: 23%;
     left: 60%;
@@ -577,6 +603,42 @@ main > ul > li:nth-of-type(4) {
   /* --- */
 
   /* OTHER ANIMATION */
+
+  .wiggle {
+    animation: wiggle 3s infinite;
+    transform-origin: center !important;
+  }
+
+  @keyframes wiggle {
+    75% {
+      rotate: 0deg;
+    }
+    80% {
+      rotate: 3deg;
+    }
+    85% {
+      rotate: -3deg;
+    }
+    90% {
+      rotate: 3deg;
+    }
+    95% {
+      rotate: -3deg;
+    }
+  }
+
+  .scaletest {
+    transition: 100ms;
+    width: 12em !important;
+    height: 10em !important;
+    z-index: 200 !important;
+    transform: perspective(20em) rotateY(0deg) rotateX(0deg) rotateZ(0deg) !important;
+  }
+
+  .scaletest figcaption {
+    font-size: .8em;
+    margin: .5em;
+  }
 
   /* --- */
 

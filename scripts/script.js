@@ -10,11 +10,13 @@ const bowlingBall = document.querySelector((mainSelector + "(2) > div"));
 const tom = document.querySelector("main > section:first-of-type > div:first-of-type")
 const jerry = document.querySelector("main > section:first-of-type > div:last-of-type")
 
+painting1.classList.add("wiggle")
 
 let painting1Counter = 0;
 
 painting1.addEventListener("click", () => {
     if(painting1Counter <= 0){
+        painting1.classList.remove("wiggle")
         console.log("show text")
         painting1Counter++
     }else {
@@ -22,6 +24,7 @@ painting1.addEventListener("click", () => {
         jerry.classList.add("jerry-1")
         painting1Counter = 0;
 
+        painting2.classList.add("wiggle")
     }
 })
 
@@ -31,6 +34,7 @@ painting2.addEventListener("click", () => {
     if(painting2Counter <= 0){
         console.log("show text")
         painting2Counter++
+        painting2.classList.remove("wiggle")
     }else if (painting2Counter >= 1 && jerry.classList.contains("jerry-1")) {
         console.log("Move character")
         painting2.classList.add("painting2-fall")
