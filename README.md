@@ -56,7 +56,7 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
   <br/>
   Een stripverhaal pagina over donald duck.
   Hierin zouden typische "donald" elementen staan zoals zijn neefjes, oom, "temperment" etc. Als kind heb ik veel stripverhalen over Donald Duck gelezen waardoor dit karakter nostalgische waarde heeft.
-  <img src="./images/schets-donaldduck.jpg" width="375px" alt="eerste versie/schets Donald Duck">
+  <img src="./readme-images/schets-donaldduck.jpg" width="375px" alt="eerste versie/schets Donald Duck">
 
   **Feedback** 
   Het idee om de tijdlijn af te beelden in een stripverhaal was sterk. Meeste mensen kennen Donald Duck namelijk van de stripverhalen. Er zouden animaties, videos en informatie kunnen worden getoond wanneer de gebruiker om een strip paneel klikt.
@@ -64,8 +64,8 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
   2: **Tom and Jerry**
   <br/>
   ik ben met Tom and Jerry opgegroeid. Bijna elke episode ken ik wel uit mijn hoofd. In deze schets het ik een typische Tom and Jerry setting gemaakt waarbij de gebruiker Tom (en Jerry) volgt door het huis op een komische en "slapstick" manier.   <br/>Wat Tom echt Tom maakt is Jerry. Hierdoor is het lastig om het alleen over Tom te houden. Dit zou dan een uitzondering op de opdracht zijn met twee karakters. (of twee karakters met focus op Tom)
-  <img src="./images/schets-tomandjerry1.jpg" width="375px" alt="eerste versie/schets Tom and Jerry">
-  <img src="./images/schets-tomandjerry2.jpg" width="375px" alt="eerste versie/schets Tom and Jerry">
+  <img src="./readme-images/schets-tomandjerry1.jpg" width="375px" alt="eerste versie/schets Tom and Jerry">
+  <img src="./readme-images/schets-tomandjerry2.jpg" width="375px" alt="eerste versie/schets Tom and Jerry">
 
   **Feedback**
   Het idee dat Deze tijdlijn zich afspeeld in een huis is sterk omdat Tom and Jerry zich daar vaak in afspeeld. Informatie in dit huis kan dan bijvoorbeeld worden gegeven door een pop up of in schilderijen waar de gebruiker interactie mee heeft. Ook kan ik meer kenmerkende dingen van Tom and Jerry terug laten komen in onder andere de achtergronden.
@@ -73,8 +73,8 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
   3: **Scooby Doo**
   <br/>
   Scooby Doo heeft vele vormen van entertainment gezien. Stripverhalen, cartoons, films, live action etc. In deze schets heb ik een "haunted mansion" gemaakt waar Scooby Doo op een komische manier zijn tijdlijn laat zien. Dit maar het uniek voor Scooby Doo door zijn typische animaties en objecten zoals Scooby Snacks.
-  <img src="./images//schets-scoobydoo1.jpg" width="375px" alt="eerste versie/schets Scooby Doo">
-  <img src="./images/schets-scoobydoo2.jpg" width="375px" alt="eerste versie/schets Scooby Doo">
+  <img src="./readme-images/schets-scoobydoo1.jpg" width="375px" alt="eerste versie/schets Scooby Doo">
+  <img src="./readme-images/schets-scoobydoo2.jpg" width="375px" alt="eerste versie/schets Scooby Doo">
 
   **Feedback**
   Dit idee was het minst sterk van de drie. Ik kon mogelijk nog wat meer manieren van informeren toe voegen naast gebruik van deuren. Ook kon ik meerdere soorten stijlen toevoegen.
@@ -160,25 +160,38 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 
 <details>
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
-  
+
+  Op maandag 7 november heb ik samen met mede-student Sandra een feedbacksessie gehouden. Voor deze sessie hebben wij een checklist aangehouden voor details, verzorging en nette code.
+
+  <img src="./readme-images/feedback2-1.jpg" width="375px" alt="feedbackformulier voorzijde">
+  <img src="./readme-images/feedback2-2.jpg" width="375px" alt="feedbackformulier achterzijde">
+
+  Onderstaand is een GIF van mijn werk getoond tijdens deze feedback sessie:
+  <br>
+  <img src="./readme-images/feedback2.gif" width="375px" alt="gif van website tussentijds">
+
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  De pagina is een beetje responsive maar niet zoveel als ik zou willen hebben.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
+  Dit wil ik gaan oplossen door wat oude media queries the verwijderen en dit in zijn geheel te laten scalen.
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  De gebruiker kan nog niet interactie hebben met elementen door middel van tab. Dit komt omdat de klikbare elementen <figure>'s zijn en niet <button>s. 
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik ga de klikbare elementen vervangen met buttons. Hier ga ik ook aria labels aan toevoegen.
 
 
-
-  ### Bevinding 3:
-  ...
+  ### Lijst kleine fixes en edits
+  - Ik heb nog geen teksten gebruikt in mijn werk. Hierdoor heb ik ook nog geen custom fonts toegevoegd.
+  - In de website staan nog een aantal placeholder afbeeldingen die niet bij het geheel passen.
+  - Er missen nog states zoals hovers bij elementen.
+  - Er staat een <ul> in de code die beter kan worden vervangen door een <ol> omdat deze een vaste volgorde heeft.
+  - Er staat een <section> in mijn code die waarschijnlijk overbodig is.
+  - De CSS is nog een beetje rommelig.
+  - Er worden nog geen CSS variables gebruikt.
 
 </details>
 
