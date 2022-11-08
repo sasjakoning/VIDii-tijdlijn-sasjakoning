@@ -20,6 +20,8 @@ const trapDoor = document.querySelector(
   mainSelector + "(3) > figure:nth-of-type(2)"
 );
 
+const logo = document.querySelector("header > img")
+
 const tom = document.querySelector(
   "main > section:first-of-type > div:first-of-type"
 );
@@ -53,6 +55,7 @@ itemArray.forEach((item, i) => {
             if (clickCounter <= 0) {
                 painting1.classList.remove("wiggle");
                 painting1.classList.add("painting1-timeline");
+                logo.classList.add("logo-hidden")
       
                 clickCounter++;
               } else {
