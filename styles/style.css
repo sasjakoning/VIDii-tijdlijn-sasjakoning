@@ -1,3 +1,13 @@
+
+@font-face {
+  font-family: 'gochiHand-Regular';
+  src:  
+  url(../fonts/gochihand-regular.ttf) format('truetype'),
+  url(../fonts/gochihand-regular.woff) format('woff'),
+  url(../fonts/gochihand-regular.woff2) format('woff2');
+}
+
+
 /*************/
 /* CSS RESET */
 /*************/
@@ -9,7 +19,7 @@
 
 body {
   margin:0;
-  font-family: sans-serif;
+  font-family: "gochiHand-Regular", sans-serif;
 }
 
 button:not([disabled]) {
@@ -23,22 +33,26 @@ button:not([disabled]) {
 /*********************/
 
 :root {
-  --color-headings:crimson;
-  /* --x-axis: 11cqi;
-  --y-axis: 95cqb; */
+  --yellow: rgb(251, 251, 30);
+  --orangeyellow: rgb(247, 205, 9);
+  --orange: rgb(245, 100, 8);
+  --red: rgb(246, 8, 8);
+  --darkred: rgb(161, 9, 10);
+
+  --black: rgb(22, 22, 22);
+  --white: rgb(246, 245, 245);
+
+  --painting-border: .2em solid var(--orangeyellow); 
+  --painting-shadow: .1em .1em 0 var(--darkred);
+
+  --wood-brown: rgb(120, 70, 48);
+  --wood-lightbrown: rgb(150, 82, 43);
+  --wood-darkbrown: rgb(137, 54, 39);
 }
-
-
-
-
 
 /********************/
 /* ALGEMENE STYLING */
 /********************/
-
-h1 {
-  color:var(--color-headings);
-}
 
 body {
   width: 100vw;
@@ -46,6 +60,20 @@ body {
   display: grid;
   place-items: center;
   /* overflow: hidden; */
+}
+
+header {
+  position: relative;
+  width: 100%;
+}
+
+header > img {
+  width: 30em;
+  top: 5em;
+  left: 2em;
+  z-index: 110;
+  position: absolute;
+  rotate: -10deg;
 }
 
 main {
@@ -68,10 +96,6 @@ main > ul > li > img {
   transform-origin: top center;
 }
 
-/* main > ul > li:nth-of-type(1) {
-  
-} */
-
 main > ul > li:nth-of-type(1) > img:first-of-type {
   position: absolute;
   z-index: 100;
@@ -80,6 +104,7 @@ main > ul > li:nth-of-type(1) > img:first-of-type {
 
 main > ul > li:nth-of-type(2) {
   transform: translateY(-2em); 
+  z-index: 1;
 }
 
 main > ul > li:nth-of-type(3) {
@@ -128,7 +153,6 @@ main > ul > li:nth-of-type(4) {
     container-type: size;
     width: 100%;
     height: 90%;
-    border: 2px solid red;
     position: absolute;
     z-index: 100;
     pointer-events: none;
@@ -181,18 +205,132 @@ main > ul > li:nth-of-type(4) {
     offset-path: path("M600,290 C590,290 650,180 680,290 L700,290 C750,300 800,510 600,510 L185,510 185,750 500,750 C500,750 550,790 700,780 C700,780 790,800 700,960 L80,960");
     offset-distance: 0%;
     position: absolute;
+    transform: translateX(1.8em);
 
-    transform:rotate(180deg);
     transform-origin: 50% 75%;
     
     background-image: url(../images/assets/tom-temp.webp);
     background-repeat: no-repeat;
     background-size: contain;
-
-    animation: tom-1-running 5s 3s cubic-bezier(.24,0,1,.99) forwards;
+    offset-rotate: 0deg;
   }
 
   /* TOM ANIMATION */
+
+  .tom-1 {
+    animation: tom-1 .5s ease-in-out forwards;
+  }
+
+  @keyframes tom-1 {
+    from {
+      offset-distance:0%;
+    }
+    to {
+      offset-distance:6%;
+    }
+  }
+
+  .tom-2 {
+    animation: tom-2-run 1s ease-in forwards;
+  }
+
+  @keyframes tom-2-run {
+    from {
+      offset-distance:6%;
+      transform: scaleX(1);
+    }
+    10% {
+      offset-distance:9%;
+      transform: scaleX(-1);
+    }
+    90% {
+      offset-distance:20%;
+      transform: scaleX(-1);
+    }
+    to {
+      offset-distance:19%;
+      transform: scaleX(-1);
+    }
+  }
+
+  .tom-3 {
+    animation: tom-3 2s ease-in forwards;
+  }
+
+  @keyframes tom-3 {
+    from {
+      offset-distance:19%;
+      transform: scaleX(-1);
+    }
+    50% {
+      offset-distance:36%;
+      transform: scaleX(-1);
+    }
+    55%, 95% {
+      offset-distance:36%;
+      transform: scaleX(1);
+    }
+    100% {
+      offset-distance:36%;
+      transform: scaleX(-1);
+    }
+  }
+  
+  .tom-4 {
+    animation: tom-4 .3s ease-in forwards;
+  }
+
+  @keyframes tom-4 {
+    from {
+      offset-distance:36%;
+      transform: scaleX(-1);
+    }
+    to {
+      offset-distance:46%;
+      transform: scaleX(-1);
+    }
+  }
+
+  .tom-5 {
+    animation: tom-5 3s ease-in forwards;
+  }
+
+  @keyframes tom-5 {
+    from {
+      offset-distance:46%;
+    }
+    to {
+      offset-distance:58%;
+    }
+  }
+
+  .tom-6 {
+    animation: tom-6 1.5s ease-in forwards, tom-6-run 1s 1.5s ease-in forwards;
+  }
+
+  @keyframes tom-6 {
+    from {
+      offset-distance:58%;
+    }
+    to {
+      offset-distance:75%;
+    }
+  }
+
+  @keyframes tom-6-run {
+    from {
+      offset-distance:75%;
+      transform: scaleX(-1);
+    }
+    90% {
+      offset-distance:100%;
+      transform: scaleX(-1);
+    }
+    to {
+      offset-distance:98%;
+      transform: scaleX(-1);
+    }
+  }
 
   /* --- */
 
@@ -200,14 +338,15 @@ main > ul > li:nth-of-type(4) {
 
   main > section > div:nth-of-type(2) {
     display: inline-block;
-    offset-path: path("M90,290 L450,290 C450,200 500,100 570,170 L650,170 C750,170 750,290 750,290 L860,290 860,540 580,530 C560,530 580,530 570,370 560,340 520,350 520,355 L440,355 C400,345 400,345 350,385 L330,385 C310,345 300,375 300,385 L300,385 C250,355 150,305 150,540 C150,510 100,520 100,540 L80,540 80,730 200,730 440,730 C440,670 470,570 560,640 L560,640 C560,640 580,620 600,640 L650,640 C650,640 750,600 750,950 L70,950");
+    offset-path: path("M90,290 L450,290 C450,200 500,100 570,170 L650,170 C750,170 750,290 750,290 L860,290 860,540 580,530 C560,530 580,530 570,370 560,340 520,350 520,355 L440,355 C400,345 350,325 300,385 L270,385 C260,345 240,375 240,385 L220,385 C220,355 150,305 150,540 C150,510 100,520 100,540 L80,540 80,730 200,730 440,730 C440,670 470,570 560,640 L560,640 C560,640 580,620 600,640 L650,640 C650,640 750,600 750,950 L70,950");
     offset-distance: 0%;
-
+    transform: translateX(1.8em);
     background-image: url(../images/assets/jerry-temp.png);
     background-repeat: no-repeat;
     background-size: contain;
     /* background-color: aqua; */
-    stroke: black;
+    stroke: var(--black);
+    offset-rotate: 0deg;
     width: 1.5em;
     height: 1.5em;
   }
@@ -220,8 +359,9 @@ main > ul > li:nth-of-type(4) {
 
   /* JERRY ANIMATION */
 
+  /* Painting 1 */
   .jerry-1 {
-    animation: jerry-1-move 1s forwards cubic-bezier(0.02, 0.01, 0.21, 1), jerry-1-jump .7s 1s cubic-bezier(0.02, 0.01, 0.21, 1) forwards;
+    animation: jerry-1-move 1s.51s forwards cubic-bezier(0.02, 0.01, 0.21, 1), jerry-1-jump .7s 1.5s cubic-bezier(0.02, 0.01, 0.21, 1) forwards;
   }
 
   @keyframes jerry-1-move {
@@ -242,6 +382,7 @@ main > ul > li:nth-of-type(4) {
     }
   }
 
+  /* Painting 2 */
   .jerry-2 {
     animation: jerry-2-jump 2s forwards cubic-bezier(0.02, 0.01, 0.21, 1), jerry-2-inwall 2s 2s forwards;
   }
@@ -274,14 +415,103 @@ main > ul > li:nth-of-type(4) {
     }
   }
 
-  /* @keyframes jerry-1 {
+  /* Closet */
+  .jerry-3 {
+    animation: jerry-3 2s ease-in-out forwards;
+  }
+
+  @keyframes jerry-3 {
     from {
-      transform: translate(calc(10cqi - 1.5em), calc(95cqb - 1.5em));
+      offset-distance: 28.5%;
+      transform: translateX(1.8em) scaleX(-1);
     }
     to {
-      transform: translate(calc(52cqi - 1.5em), calc(95cqb - 1.5em));
+      offset-distance:41%;
+      transform: translateX(1.8em) scaleX(-1);
     }
-  } */
+  }
+
+  /* Closet again */
+  .jerry-4 {
+    animation: jerry-4 1s ease-in-out forwards;
+  }
+
+  @keyframes jerry-4 {
+    from {
+      offset-distance: 41%;
+      transform: translateX(1.8em) scaleX(-1);
+    }
+    to {
+      offset-distance:46.2%;
+      transform: translateX(1.8em) scaleX(-1);
+    }
+  }
+
+  /* Bookshelf */
+  .jerry-5 {
+    animation: jerry-5 3s ease-in-out forwards;
+  }
+
+  @keyframes jerry-5 {
+    from {
+      offset-distance:46.2%;
+      transform: translateX(1.8em) scaleX(-1);
+    }
+    to {
+      offset-distance:62%;
+      transform: translateX(1.8em) scaleX(-1);
+    }
+  }
+
+  /* Painting 3 */
+
+  .jerry-6 {
+    animation: jerry-6 3s ease-in forwards, jerry-6-jump 1s 3s ease-out forwards;
+  }
+
+  @keyframes jerry-6 {
+    from {
+      offset-distance:62%;
+    }
+    to {
+      offset-distance: 68%;
+    }
+  }
+
+  @keyframes jerry-6-jump {
+    from {
+      offset-distance: 68%;
+    }
+    to {
+      offset-distance: 75%;
+    }
+  }
+
+  .jerry-7 {
+    animation: jerry-7 1s ease-in forwards;
+  }
+
+  @keyframes jerry-7 {
+    from {
+      offset-distance: 75%;
+    }
+    to {
+      offset-distance: 84%;
+    }
+  }
+
+  .jerry-8 {
+    animation: jerry-8 2s ease-in forwards;
+  }
+
+  @keyframes jerry-8 {
+    from {
+      offset-distance: 84%;
+    }
+    to {
+      offset-distance: 100%;
+    }
+  }
 
   /* --- */
 
@@ -290,10 +520,10 @@ main > ul > li:nth-of-type(4) {
     width: 6em;
     height: 5em;
     margin: 0;
-    background-color: rgb(226, 177, 114);
+    background-color: beige;
     position: absolute;
-    border: .2em solid orange;
-    box-shadow: .1em .1em 0 brown;
+    border: var(--painting-border);
+    box-shadow: var(--painting-shadow);
     transform: perspective(20em) rotateY(30deg) rotateX(7deg) rotateZ(4deg);
     scale: 1;
 
@@ -302,8 +532,12 @@ main > ul > li:nth-of-type(4) {
     z-index: 10;
   }
 
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > img {
+    border-bottom: .2em solid var(--orangeyellow);
+  }
+
   main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > figcaption {
-    display: none;
+    opacity: 0;
   }
 
   main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > button,
@@ -328,7 +562,7 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > button:focus-visible, main > ul > li:nth-of-type(1) > figure:nth-of-type(1):hover,
   main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > button:focus-visible, main > ul > li:nth-of-type(1) > figure:nth-of-type(2):hover{
     transition: 100ms;
-    border: .2em solid orange;
+    border: var(--painting-border);
     outline: none;
     box-shadow: 0 0 1em .5em rgba(255, 255, 0, 0.5);
   }
@@ -339,8 +573,24 @@ main > ul > li:nth-of-type(4) {
 
   main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > figcaption {
     position: absolute;
-    top: 0;
-    color: red;
+    color: var(--black);
+  }
+
+  .painting1-timeline {
+    transition: 100ms;
+    width: 12em !important;
+    height: 13em !important;
+    z-index: 200 !important;
+    transform: perspective(20em) rotateY(0deg) rotateX(0deg) rotateZ(0deg) !important;
+  }
+
+  .painting1-timeline > figcaption {
+    font-size: .5em;
+    position: absolute;
+    bottom: 0;
+    margin: .5em;
+    opacity: 1 !important;
+    transition: 200ms;
   }
   /* --- */
 
@@ -350,8 +600,8 @@ main > ul > li:nth-of-type(4) {
     margin: 0;
     background-color: rgb(226, 177, 114);
     position: absolute;
-    border: .2em solid orange;
-    box-shadow: .1em .1em 0 brown;
+    border: var(--painting-border);
+    box-shadow: var(--painting-shadow);
     transform-origin: 80% -10%;
 
     bottom: 23%;
@@ -420,7 +670,21 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > figcaption {
     position: absolute;
     top: 0;
-    color: red;
+    color: var(--black);
+  }
+
+  .painting2-timeline {
+    transition: 100ms;
+    width: 12em !important;
+    height: 10em !important;
+    z-index: 200 !important;
+  }
+
+  .painting2-timeline figcaption {
+    font-size: .8em;
+    margin: .5em;
+    opacity: 1 !important;
+    transition: 200ms;
   }
   /* --- */
 
@@ -429,9 +693,10 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(2) > figure:nth-of-type(1) {
     width: 8em;
     height: 11em;
-    background-color: brown;
+    background-color: var(--wood-brown);
     position: absolute;
     margin: 0;
+    border: 2px solid var(--black);
 
     top: 18%;
     right: 39%;
@@ -442,7 +707,8 @@ main > ul > li:nth-of-type(4) {
     position: absolute;
     width: 10%;
     height: 97%;
-    background-color: azure;
+    background-color: var(--wood-darkbrown);
+    border: 2px solid var(--black);
     transform: perspective(10em) rotateY(-70deg);
     
     top: 2%;
@@ -453,11 +719,27 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div > span {
     width: 42%;
     height: 80%;
-    background-color: lightcoral;
+    background-color: var(--wood-lightbrown);
     position: absolute;
+    border: 2px solid var(--black);
 
     top: 5%;
     left: 6%;
+  }
+
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div > span::before {
+    content: "";
+    position: absolute;
+    width: .7em;
+    height: .7em;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+
+    background-color: var(--wood-brown);
+
+    top: 50%;
+    right: 10%;
+    transform: translate(0, -50%);
   }
 
   /* closet door right */
@@ -465,6 +747,10 @@ main > ul > li:nth-of-type(4) {
     left: calc(94% - 42%);
     transform: perspective(10em) rotateY(0deg);
     transform-origin: right center;
+  }
+
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div > span:last-of-type::before {
+    right: calc(90% - .7em);
   }
 
   .closet-door {
@@ -490,18 +776,19 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(2) > figure:nth-of-type(2) {
     width: 10em;
     height: .5em;
-    background-color: brown;
+    background-color: var(--wood-brown);
     position: absolute;
     margin: 0;
     transform-origin: right center;
     rotate: 0deg;
+    border: 2px solid var(--black);
 
     top: 30%;
     left: 18%;
   }
 
   .bookshelf-fall {
-    animation: bookshelf-fall .5s linear forwards;
+    animation: bookshelf-fall .5s 1s linear forwards;
   }
 
   @keyframes bookshelf-fall {
@@ -521,32 +808,31 @@ main > ul > li:nth-of-type(4) {
   /* bowling ball */
 
   main > ul > li:nth-of-type(2) > div {
-    width: 3em;
-    height: 3em;
+    width: 2.5em;
+    height: 2.5em;
     background-color: black;
     position: absolute;
     margin: 0;
     border-radius: 50%;
     transform: translate(0%, 0%);
-    z-index: 100;
 
-    top: 14%;
+    top: 16%;
     left: 19%;
   }
 
   .bowlingball-fall {
-    animation: bowlingball-fall 1s .1s ease-in forwards;
+    animation: bowlingball-fall .5s 1.7s ease-in forwards;
   }
 
   @keyframes bowlingball-fall {
     80% {
-      transform: translate(0%, 800%);
+      transform: translate(0%, 890%);
     }
     90% {
-      transform: translate(0%, 760%);
+      transform: translate(0%, 840%);
     }
     100% {
-      transform: translate(0%, 800%);
+      transform: translate(0%, 890%);
     }
   }
 
@@ -557,10 +843,10 @@ main > ul > li:nth-of-type(4) {
       width: 7em;
       height: 6em;
       margin: 0;
-      background-color: rgb(226, 177, 114);
+      background-color: var(--white);
       position: absolute;
-      border: .2em solid orange;
-      box-shadow: .1em .1em 0 brown;
+      border: var(--painting-border);
+      box-shadow: var(--painting-shadow);
 
       top: 10%;
       left:25%;
@@ -630,18 +916,6 @@ main > ul > li:nth-of-type(4) {
     }
   }
 
-  .painting1-timeline {
-    transition: 100ms;
-    width: 12em !important;
-    height: 10em !important;
-    z-index: 200 !important;
-    transform: perspective(20em) rotateY(0deg) rotateX(0deg) rotateZ(0deg) !important;
-  }
-
-  .painting1-timeline figcaption {
-    font-size: .8em;
-    margin: .5em;
-  }
 
   /* --- */
 
