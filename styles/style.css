@@ -15,6 +15,7 @@
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
   box-sizing:border-box;  
+  padding: 0;
 }
 
 body {
@@ -25,7 +26,6 @@ body {
 button:not([disabled]) {
   cursor:pointer;
 }
-
 
 
 /*********************/
@@ -56,23 +56,25 @@ button:not([disabled]) {
 
 body {
   width: 100vw;
-  background: linear-gradient(0deg, rgb(104, 44, 36) 0%, rgb(104, 44, 36) 20%, rgba(50,152,69,1) 20%, rgba(50,152,69,1) 30%, rgb(171, 223, 220) 30%, rgb(171, 223, 220) 100%);
   display: grid;
   place-items: center;
+
+  background: linear-gradient(0deg, rgb(104, 44, 36) 0%, rgb(104, 44, 36) 20%, rgba(50,152,69,1) 20%, rgba(50,152,69,1) 30%, rgb(171, 223, 220) 30%, rgb(171, 223, 220) 100%);
   /* overflow: hidden; */
 }
 
 header {
-  position: relative;
   width: 60em;
+  position: relative;
 }
 
 header > img {
   width: 30em;
+  position: absolute;
   top: 5em;
   left: 2em;
+
   z-index: 110;
-  position: absolute;
   rotate: -10deg;
   opacity: 1;
 }
@@ -88,9 +90,9 @@ main {
 }
 
 main > ul {
+  position: relative;
   list-style: none;
   padding: 0;
-  position: relative;
 }
 
 main > ul > li {
@@ -156,10 +158,11 @@ main > ul > li:nth-of-type(4) {
 
   /* Tom and jerry frame */
   main > section {
-    container-type: size;
     width: 100%;
     height: 90%;
     position: absolute;
+
+    container-type: size;
     z-index: 100;
     pointer-events: none;
 
@@ -207,18 +210,18 @@ main > ul > li:nth-of-type(4) {
   main > section > div:nth-of-type(1){
     width: 5em;
     height: 5em;
-    /* background-color: darkgray; */
+    position: absolute;
+
+    transform: translateX(1.8em);
+    transform-origin: 50% 75%;
+
     offset-path: path("M600,290 C590,290 650,180 680,290 L700,290 C750,300 800,510 600,510 L185,510 185,750 500,750 C500,750 550,790 700,780 C700,780 790,800 700,960 L80,960");
     offset-distance: 0%;
-    position: absolute;
-    transform: translateX(1.8em);
+    offset-rotate: 0deg;
 
-    transform-origin: 50% 75%;
-    
     background-image: url(../images/assets/tom-temp.webp);
     background-repeat: no-repeat;
     background-size: contain;
-    offset-rotate: 0deg;
   }
 
   /* TOM ANIMATION */
@@ -343,18 +346,19 @@ main > ul > li:nth-of-type(4) {
   /* JERRY */
 
   main > section > div:nth-of-type(2) {
+    width: 1.5em;
+    height: 1.5em;
     display: inline-block;
+
     offset-path: path("M90,290 L450,290 C450,200 500,100 570,170 L650,170 C750,170 750,290 750,290 L860,290 860,540 580,530 C560,530 580,530 570,370 560,340 520,350 520,355 L440,355 C400,345 350,325 300,385 L270,385 C260,345 240,375 240,385 L220,385 C220,355 150,305 150,540 C150,510 100,520 100,540 L80,540 80,730 200,730 440,730 C440,670 470,570 560,640 L560,640 C560,640 580,620 600,640 L650,640 C650,640 750,600 750,950 L70,950");
     offset-distance: 0%;
+    offset-rotate: 0deg;
+
     transform: translateX(1.8em);
+
     background-image: url(../images/assets/jerry-temp.png);
     background-repeat: no-repeat;
     background-size: contain;
-    /* background-color: aqua; */
-    stroke: var(--black);
-    offset-rotate: 0deg;
-    width: 1.5em;
-    height: 1.5em;
   }
 
   svg {
@@ -521,20 +525,25 @@ main > ul > li:nth-of-type(4) {
 
   /* --- */
 
+
+
   /* Painting 1 */
   main > ul > li:nth-of-type(1) > figure:nth-of-type(1) {
     width: 6em;
     height: 5em;
-    margin: 0;
-    background-color: beige;
     position: absolute;
-    border: var(--painting-border);
-    box-shadow: var(--painting-shadow);
-    transform: perspective(20em) rotateY(30deg) rotateX(7deg) rotateZ(4deg);
-    scale: 1;
-
+    
     bottom: 11%;
     left:9%;
+
+    margin: 0;
+    transform: perspective(20em) rotateY(30deg) rotateX(7deg) rotateZ(4deg);
+    scale: 1;
+    
+    background-color: beige;
+    border: var(--painting-border);
+    box-shadow: var(--painting-shadow);
+    
     z-index: 10;
   }
 
@@ -550,9 +559,9 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > button {
     width: 100%;
     height: 100%;
+    position: absolute;
     background: none;
     border: none;
-    position: absolute;
   }
 
   main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > button:focus,
@@ -582,18 +591,19 @@ main > ul > li:nth-of-type(4) {
     color: var(--black);
   }
 
+  /* Painting scale up when clicked */
   .painting1-timeline {
-    transition: 100ms;
     width: 12em !important;
     height: 13em !important;
     z-index: 200 !important;
     transform: perspective(20em) rotateY(0deg) rotateX(0deg) rotateZ(0deg) !important;
+    transition: 100ms;
   }
 
   .painting1-timeline > figcaption {
-    font-size: .5em;
     position: absolute;
     bottom: 0;
+    font-size: .5em;
     margin: .5em;
     opacity: 1 !important;
     transition: 200ms;
@@ -603,15 +613,16 @@ main > ul > li:nth-of-type(4) {
   /* Painting 2 */
   main > ul > li:nth-of-type(1) > figure:nth-of-type(2) {
     width: 6em;
+    position: absolute;
+    bottom: 23%;
+    left: 60%;
+
     margin: 0;
     background-color: rgb(226, 177, 114);
-    position: absolute;
     border: var(--painting-border);
     box-shadow: var(--painting-shadow);
     transform-origin: 80% -10%;
 
-    bottom: 23%;
-    left: 60%;
     z-index: 10;
   }
 
@@ -680,10 +691,10 @@ main > ul > li:nth-of-type(4) {
   }
 
   .painting2-timeline {
-    transition: 100ms;
     width: 12em !important;
     height: 10em !important;
     z-index: 200 !important;
+    transition: 100ms;
   }
 
   .painting2-timeline figcaption {
@@ -699,53 +710,56 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(2) > figure:nth-of-type(1) {
     width: 8em;
     height: 11em;
-    background-color: var(--wood-brown);
     position: absolute;
-    margin: 0;
-    border: 2px solid var(--black);
 
     top: 18%;
     right: 39%;
+
+    background-color: var(--wood-brown);
+    margin: 0;
+    border: 2px solid var(--black);
   }
 
   main > ul > li:nth-of-type(2) > figure:nth-of-type(1)::before {
     content: "";
-    position: absolute;
     width: 10%;
     height: 97%;
-    background-color: var(--wood-darkbrown);
-    border: 2px solid var(--black);
-    transform: perspective(10em) rotateY(-70deg);
+    position: absolute;
     
     top: 2%;
     left: -7%;
+
+    background-color: var(--wood-darkbrown);
+    border: 2px solid var(--black);
+    transform: perspective(10em) rotateY(-70deg);
   }
 
   /* closet door left */
   main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div > span {
     width: 42%;
     height: 80%;
-    background-color: var(--wood-lightbrown);
     position: absolute;
-    border: 2px solid var(--black);
 
     top: 5%;
     left: 6%;
+
+    background-color: var(--wood-lightbrown);
+    border: 2px solid var(--black);
   }
 
   main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > div > span::before {
     content: "";
-    position: absolute;
     width: .7em;
     height: .7em;
-    border: 2px solid var(--black);
-    border-radius: 50%;
-
-    background-color: var(--wood-brown);
+    position: absolute;
 
     top: 50%;
     right: 10%;
     transform: translate(0, -50%);
+
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    background-color: var(--wood-brown);
   }
 
   /* closet door right */
@@ -782,15 +796,16 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(2) > figure:nth-of-type(2) {
     width: 10em;
     height: .5em;
-    background-color: var(--wood-brown);
     position: absolute;
+    
+    top: 30%;
+    left: 18%;
+
+    background-color: var(--wood-brown);
     margin: 0;
     transform-origin: right center;
     rotate: 0deg;
     border: 2px solid var(--black);
-
-    top: 30%;
-    left: 18%;
   }
 
   .bookshelf-fall {
@@ -816,14 +831,15 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(2) > div {
     width: 2.5em;
     height: 2.5em;
-    background-color: black;
     position: absolute;
-    margin: 0;
-    border-radius: 50%;
-    transform: translate(0%, 0%);
 
     top: 16%;
     left: 19%;
+    transform: translate(0%, 0%);
+
+    background-color: black;
+    margin: 0;
+    border-radius: 50%;
   }
 
   .bowlingball-fall {
@@ -848,14 +864,15 @@ main > ul > li:nth-of-type(4) {
     main > ul > li:nth-of-type(3) > figure:nth-of-type(1) {
       width: 7em;
       height: 6em;
-      margin: 0;
-      background-color: var(--white);
       position: absolute;
-      border: var(--painting-border);
-      box-shadow: var(--painting-shadow);
 
       top: 10%;
       left:25%;
+
+      margin: 0;
+      background-color: var(--white);
+      border: var(--painting-border);
+      box-shadow: var(--painting-shadow);
       z-index: 10;
     }
 
@@ -876,23 +893,25 @@ main > ul > li:nth-of-type(4) {
   main > ul > li:nth-of-type(3) > figure:nth-of-type(2) {
     width: 6em;
     height: 6em;
-    background-color: brown;
     position: absolute;
-    transform: perspective(20em);
-    perspective-origin: 28% 40%;
+    
     top: 55%;
     right: 15%;
+    transform: perspective(20em);
+    perspective-origin: 28% 40%;
+
+    background-color: brown;
     margin: 0;
   }
 
   main > ul > li:nth-of-type(3) > figure:nth-of-type(2) > div {
     width: 6em;
     height: 6em;
-    background-color: lightcoral;
     position: absolute;
-    /* transform-origin: right center; */
+
     top: 0%;
     right: 0%;
+    background-color: lightcoral;
   }
 
   /* --- */
