@@ -28,10 +28,10 @@ const trapDoorDoor = document.querySelector(
 const logo = document.querySelector("header > img")
 
 const tom = document.querySelector(
-  "main > section:first-of-type > div:first-of-type"
+  "main > section:first-of-type > button:nth-of-type(1)"
 );
 const jerry = document.querySelector(
-  "main > section:first-of-type > div:last-of-type"
+  "main > section:first-of-type > button:nth-of-type(2)"
 );
 
 const itemArray = [
@@ -110,12 +110,16 @@ itemArray.forEach((item, i) => {
             if (clickCounter <= 0) {
                 closet.classList.remove("wiggle");
                 setTimeout(() => {
-                    closet.childNodes[3].childNodes[3].classList.add("closet-door");
+                    closet.childNodes[7].childNodes[3].classList.add("closet-door-open");
                 }, 1700);
                 jerry.classList.add("jerry-3");
                 setTimeout(() => {
                     tom.classList.add("tom-2")
                 }, 1000);
+
+                setTimeout(() => {
+                  closet.childNodes[3].classList.add("closet-image-open");
+              }, 2500);
 
                 setTimeout(() => {
                   camera.classList.add("camera-closet")
@@ -141,7 +145,15 @@ itemArray.forEach((item, i) => {
         if(actionCounter == 3) {
             if (clickCounter <= 0) {
                 bookshelf.classList.remove("wiggle");
-                tom.classList.add("tom-3")
+                setTimeout(() => {
+                  tom.classList.add("tom-3")
+                }, 200);
+
+                closet.childNodes[7].childNodes[3].classList.add("closet-door-close");
+
+                setTimeout(() => {
+                  bookshelf.childNodes[3].classList.add("bookshelf-image-open")
+                }, 200);
       
                 clickCounter++;
               } else {
