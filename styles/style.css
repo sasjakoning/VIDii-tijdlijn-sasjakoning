@@ -77,11 +77,14 @@ header > img {
   z-index: 110;
   rotate: -10deg;
   opacity: 1;
+
+  animation: logo-hidden 1s 1.5s linear forwards;
 }
 
-.logo-hidden {
-  opacity: 0;
-  transition: opacity 1000ms;
+@keyframes logo-hidden {
+  to {
+    opacity: 0;
+  }
 }
 
 main {
@@ -177,9 +180,7 @@ main > ul > li:nth-of-type(4) {
   main {
     scale: 1;
     transform: translate(0em, 0em);
-    animation: 
-    zoom 2s 1s ease-out forwards,
-    move 2s 4s ease-in-out forwards;
+    animation: zoom 2s 2s ease-out forwards;
   }
 
   /* CAMERA ANIMATION */
@@ -187,37 +188,126 @@ main > ul > li:nth-of-type(4) {
   /* @keyframes zoom {
     from {
       scale: 1;
-      transform: translate(0em, 0em);
+      transform-origin: 10em 12em;
     }
     to {
       scale: 2;
-      transform: translate(10em, 10em);
+      transform-origin: 10em 12em;
+    }
+  }
+
+  .camera-painting1 {
+    scale: 2;
+    animation: camera-painting1 2s forwards;
+  }
+
+  @keyframes camera-painting1 {
+    from {
+      transform-origin: 10em 12em;
+    }
+    to {
+      transform-origin: 51em 12em;
+    }
+  }
+
+  .camera-painting2 {
+    scale: 2;
+    animation: camera-painting2 2s forwards;
+  }
+
+  @keyframes camera-painting2 {
+    from {
+      transform-origin: 51em 12em;
+    }
+    to {
+      transform-origin: 51em 41em;
+    }
+  }
+
+  .camera-closet {
+    scale: 2;
+    animation: camera-closet 4s forwards;
+  }
+
+  @keyframes camera-closet {
+    from {
+      transform-origin: 51em 41em;
+    }
+    to {
+      transform-origin: 20em 41em;
+    }
+  }
+
+  .camera-shelf {
+    scale: 2;
+    animation: camera-shelf .7s ease-out forwards;
+  }
+
+  @keyframes camera-shelf {
+    from {
+      transform-origin: 20em 41em;
+    }
+    to {
+      transform-origin: 20em 68em;
+    }
+  }
+
+  .camera-painting3 {
+    scale: 2;
+    animation: camera-painting3 2.5s forwards;
+  }
+
+  @keyframes camera-painting3 {
+    from {
+      transform-origin: 20em 68em;
+    }
+    to {
+      transform-origin: 51em 68em;
+    }
+  }
+
+  .camera-trapdoor {
+    scale: 2;
+    animation: camera-trapdoor 1s forwards, camera-trapdoor-2 1s 1s forwards;
+  }
+
+  @keyframes camera-trapdoor {
+    from {
+      transform-origin: 51em 68em;
+    }
+    to {
+      transform-origin: 51em 88em;
+    }
+  }
+
+  @keyframes camera-trapdoor-2 {
+    from {
+      transform-origin: 51em 88em;
+    }
+    to {
+      transform-origin: 20em 88em;
     }
   } */
 
-  /* @keyframes move {
-    from {
-      transform: translate(10em, 10em);
-    }
-    to {
-      transform: translate(-15em, 10em);
-    }
-  } */
+
 
   /* --- */
 
   /* TOM */
-  main > section > div:nth-of-type(1){
+  main > section > button:nth-of-type(1){
     width: 5em;
     height: 5em;
     position: absolute;
 
     transform: translateX(1.8em);
     transform-origin: 50% 75%;
+    z-index: 10;
 
     offset-path: path("M600,290 C590,290 650,180 680,290 L700,290 C750,300 800,510 600,510 L185,510 185,750 500,750 C500,750 550,790 700,780 C700,780 790,800 700,960 L80,960");
     offset-distance: 0%;
     offset-rotate: 0deg;
+    border: none;
+    background: none;
 
     background-image: url(../images/assets/tom-temp.webp);
     background-repeat: no-repeat;
@@ -226,6 +316,8 @@ main > ul > li:nth-of-type(4) {
 
   /* TOM ANIMATION */
 
+
+  /* Painting 3 */
   .tom-1 {
     animation: tom-1 .5s ease-in-out forwards;
   }
@@ -239,8 +331,9 @@ main > ul > li:nth-of-type(4) {
     }
   }
 
+  /* Closet */
   .tom-2 {
-    animation: tom-2-run 1s ease-in forwards;
+    animation: tom-2-run 1s ease-in forwards, tom-2-run-clip 1s ease-in forwards;
   }
 
   @keyframes tom-2-run {
@@ -261,6 +354,23 @@ main > ul > li:nth-of-type(4) {
       transform: scaleX(-1);
     }
   }
+
+  @keyframes tom-2-run-clip {
+    from {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    75% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    90% {
+      clip-path: polygon(0 0, 17% 0, 17% 100%, 0 100%);
+    }
+    to {
+      clip-path: polygon(0 0, 49% 0, 49% 100%, 0 100%);
+    }
+  }
+
+  /* Bowling ball */
 
   .tom-3 {
     animation: tom-3 2s ease-in forwards;
@@ -285,6 +395,8 @@ main > ul > li:nth-of-type(4) {
     }
   }
   
+  /* Shelf */
+
   .tom-4 {
     animation: tom-4 .3s ease-in forwards;
   }
@@ -300,6 +412,8 @@ main > ul > li:nth-of-type(4) {
     }
   }
 
+  /* Painting 3 */
+
   .tom-5 {
     animation: tom-5 3s ease-in forwards;
   }
@@ -313,22 +427,27 @@ main > ul > li:nth-of-type(4) {
     }
   }
 
+  /* Trapdoor */
+
   .tom-6 {
-    animation: tom-6 1.5s ease-in forwards, tom-6-run 1s 1.5s ease-in forwards;
+    animation: tom-6 1.5s ease-in forwards, tom-6-run 1s 5s ease-in forwards;
   }
 
   @keyframes tom-6 {
     from {
       offset-distance:58%;
     }
+    90% {
+      offset-distance:68%;
+    }
     to {
-      offset-distance:75%;
+      offset-distance:66%;
     }
   }
 
   @keyframes tom-6-run {
     from {
-      offset-distance:75%;
+      offset-distance:68%;
       transform: scaleX(-1);
     }
     90% {
@@ -345,7 +464,7 @@ main > ul > li:nth-of-type(4) {
 
   /* JERRY */
 
-  main > section > div:nth-of-type(2) {
+  main > section > button:nth-of-type(2) {
     width: 1.5em;
     height: 1.5em;
     display: inline-block;
@@ -355,7 +474,9 @@ main > ul > li:nth-of-type(4) {
     offset-rotate: 0deg;
 
     transform: translateX(1.8em);
-
+    
+    border: none;
+    background: none;
     background-image: url(../images/assets/jerry-temp.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -402,26 +523,28 @@ main > ul > li:nth-of-type(4) {
       offset-distance: 15%;
     }
     100% {
-      offset-distance: 22.5%;
+      offset-distance: 22%;
     }
   }
 
   @keyframes jerry-2-inwall {
     0% {
-      offset-distance: 22.5%;
+      offset-distance: 22%;
       opacity: 1;
     }
     1% {
-      offset-distance: 22.5%;
+      offset-distance: 22%;
       opacity: 0;
     }
     99% {
-      offset-distance: 28.5%;
+      offset-distance: 29%;
       opacity: 0;
+      transform: translateX(1.8em) scaleX(1);
     }
     100% {
-      offset-distance: 28.5%;
+      offset-distance: 29%;
       opacity: 1;
+      transform: translateX(1.8em) scaleX(-1);
     }
   }
 
@@ -432,7 +555,7 @@ main > ul > li:nth-of-type(4) {
 
   @keyframes jerry-3 {
     from {
-      offset-distance: 28.5%;
+      offset-distance: 29%;
       transform: translateX(1.8em) scaleX(-1);
     }
     to {
@@ -467,9 +590,15 @@ main > ul > li:nth-of-type(4) {
       offset-distance:46.2%;
       transform: translateX(1.8em) scaleX(-1);
     }
-    to {
-      offset-distance:62%;
+    99% {
+      offset-distance:55.8%;
       transform: translateX(1.8em) scaleX(-1);
+      opacity: 1;
+    }
+    to {
+      offset-distance:55.8%;
+      transform: translateX(1.8em) scaleX(-1);
+      opacity: 0;
     }
   }
 
@@ -481,7 +610,7 @@ main > ul > li:nth-of-type(4) {
 
   @keyframes jerry-6 {
     from {
-      offset-distance:62%;
+      offset-distance:63.5%;
     }
     to {
       offset-distance: 68%;
@@ -556,7 +685,11 @@ main > ul > li:nth-of-type(4) {
   }
 
   main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > button,
-  main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > button {
+  main > ul > li:nth-of-type(1) > figure:nth-of-type(2) > button,
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(1) > button,
+  main > ul > li:nth-of-type(2) > figure:nth-of-type(2) > button,
+  main > ul > li:nth-of-type(3) > figure:nth-of-type(1) > button,
+  main > ul > li:nth-of-type(3) > figure:nth-of-type(2) > button {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -608,6 +741,46 @@ main > ul > li:nth-of-type(4) {
     opacity: 1 !important;
     transition: 200ms;
   }
+  /* --- */
+
+  /* Mouse holes */
+
+  main > ul > li:nth-of-type(1) > aside,
+  main > ul > li:nth-of-type(2) > aside,
+  main > ul > li:nth-of-type(3) > aside {
+    width: 1em;
+    height: 1.5em;
+    position: absolute;
+
+    border-radius: 1em 1em 0 0 ;
+    background-color: var(--black);
+  }
+
+  /* hole attic */
+  main > ul > li:nth-of-type(1) > aside {
+    bottom: 12%;
+    right: 8%;
+  }
+
+  /* holes 2nd floor */
+  main > ul > li:nth-of-type(2) > aside:first-of-type {
+    bottom: 16%;
+    right: 9%;
+    transform: skewY(21deg);
+  }
+
+  main > ul > li:nth-of-type(2) > aside:last-of-type {
+    bottom: 15.5%;
+    right: 88%;
+    transform: skewY(-21deg);
+  }
+
+  /* hole 1st floor */
+  main > ul > li:nth-of-type(3) > aside {
+    bottom: 43%;
+    right: 74%;
+  }
+
   /* --- */
 
   /* Painting 2 */
@@ -837,7 +1010,7 @@ main > ul > li:nth-of-type(4) {
     left: 19%;
     transform: translate(0%, 0%);
 
-    background-color: black;
+    background-color: var(--black);
     margin: 0;
     border-radius: 50%;
   }
@@ -888,30 +1061,80 @@ main > ul > li:nth-of-type(4) {
     
   /* --- */
 
-  /* trap door */
+  /* Trap door */
 
   main > ul > li:nth-of-type(3) > figure:nth-of-type(2) {
-    width: 6em;
-    height: 6em;
+    width: 5em;
+    height: 5em;
     position: absolute;
-    
-    top: 55%;
-    right: 15%;
-    transform: perspective(20em);
-    perspective-origin: 28% 40%;
 
-    background-color: brown;
+    top: 58%;
+    right: 15%;
+
+    perspective: 23em;
+    perspective-origin: -209%;
     margin: 0;
   }
 
-  main > ul > li:nth-of-type(3) > figure:nth-of-type(2) > div {
-    width: 6em;
-    height: 6em;
+  main > ul > li:nth-of-type(3) > figure:nth-of-type(2) > section {
+    transform: rotateX(53deg);
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+  }
+
+  main > ul > li:nth-of-type(3) > figure:nth-of-type(2) > section > div {
+    width: 100%;
+    height: 100%;
     position: absolute;
 
     top: 0%;
     right: 0%;
-    background-color: lightcoral;
+    background-color: var(--wood-darkbrown);
+  }
+
+  main > ul > li:nth-of-type(3) > figure:nth-of-type(2) > section > div:last-of-type {
+    transform: rotateY(90deg);
+    transform-origin: center right;
+    background-color: var(--wood-lightbrown);
+  }
+
+  .trapdoor-close {
+    animation: trapdoor-close .5s forwards;
+  }
+
+  @keyframes trapdoor-close {
+    from {
+      transform: rotateY(90deg);
+    }
+    60% {
+      transform: rotateY(10deg);
+    }
+    80% {
+      transform: rotateY(20deg);
+    }
+    to {
+      transform: rotateY(10deg);
+    }
+  }
+
+  .trapdoor-open {
+    animation: trapdoor-open .5s forwards;
+  }
+
+  @keyframes trapdoor-open {
+    from {
+      transform: rotateY(10deg);
+    }
+    60% {
+      transform: rotateY(90deg);
+    }
+    80% {
+      transform: rotateY(80deg);
+    }
+    to {
+      transform: rotateY(90deg);
+    }
   }
 
   /* --- */
