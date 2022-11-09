@@ -1,5 +1,7 @@
 const mainSelector = "main > ul > li:nth-of-type";
 
+const camera = document.querySelector("main")
+
 const painting1 = document.querySelector(
   mainSelector + "(1) > figure:nth-of-type(1)"
 );
@@ -18,6 +20,9 @@ const painting3 = document.querySelector(
 );
 const trapDoor = document.querySelector(
   mainSelector + "(3) > figure:nth-of-type(2)"
+);
+const trapDoorDoor = document.querySelector(
+  mainSelector + "(3) > figure:nth-of-type(2) > section > div:last-of-type"
 );
 
 const logo = document.querySelector("header > img")
@@ -55,7 +60,6 @@ itemArray.forEach((item, i) => {
             if (clickCounter <= 0) {
                 painting1.classList.remove("wiggle");
                 painting1.classList.add("painting1-timeline");
-                logo.classList.add("logo-hidden")
       
                 clickCounter++;
               } else {
@@ -63,6 +67,10 @@ itemArray.forEach((item, i) => {
                 painting2.classList.add("wiggle");
 
                 jerry.classList.add("jerry-1");
+
+                setTimeout(() => {
+                  camera.classList.add("camera-painting1")
+                }, 1000);
 
                 clickCounter = 0;
                 actionCounter++;
@@ -86,6 +94,10 @@ itemArray.forEach((item, i) => {
                 tom.classList.add("tom-1")
             }, 500);
 
+            setTimeout(() => {
+              camera.classList.add("camera-painting2")
+            }, 2000);
+
             clickCounter = 0;
             actionCounter++;
           }
@@ -104,6 +116,11 @@ itemArray.forEach((item, i) => {
                 setTimeout(() => {
                     tom.classList.add("tom-2")
                 }, 1000);
+
+                setTimeout(() => {
+                  camera.classList.add("camera-closet")
+                }, 1000);
+
       
                 clickCounter++;
               } else {
@@ -137,6 +154,10 @@ itemArray.forEach((item, i) => {
                 bookshelf.classList.add("bookshelf-fall")
                 bowlingBall.classList.add("bowlingball-fall")
 
+                setTimeout(() => {
+                  camera.classList.add("camera-shelf")
+                }, 2000);
+
                 clickCounter = 0;
                 actionCounter++;
               }
@@ -155,7 +176,13 @@ itemArray.forEach((item, i) => {
               } else {
                 trapDoor.classList.add("wiggle");
                 jerry.classList.add("jerry-6");
-                tom.classList.add("tom-5")
+                setTimeout(() => {
+                  tom.classList.add("tom-5")
+                }, 500);
+
+                setTimeout(() => {
+                  camera.classList.add("camera-painting3")
+                }, 1500);
 
                 clickCounter = 0;
                 actionCounter++;
@@ -175,6 +202,18 @@ itemArray.forEach((item, i) => {
               } else {
                 jerry.classList.add("jerry-8");
                 tom.classList.add("tom-6")
+
+                setTimeout(() => {
+                  trapDoorDoor.classList.add("trapdoor-close")
+                }, 1200);
+                setTimeout(() => {
+                  trapDoorDoor.classList.add("trapdoor-open")
+                }, 4000);
+
+                setTimeout(() => {
+                  camera.classList.add("camera-trapdoor")
+                }, 1000);
+
                 clickCounter = 0;
                 actionCounter++;
               }
