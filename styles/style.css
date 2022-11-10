@@ -298,7 +298,7 @@ main {
 
 .camera-trapdoor {
   scale: 2;
-  animation: camera-trapdoor 1s forwards, camera-trapdoor-2 1s 3.5s forwards;
+  animation: camera-trapdoor 1s forwards, camera-trapdoor-2 1s 1s forwards;
 }
 
 @keyframes camera-trapdoor {
@@ -459,7 +459,7 @@ main > section > button:nth-of-type(1){
 /* Trapdoor */
 
 .tom-6 {
-  animation: tom-6 1.5s ease-in forwards, tom-6-run 1.5s 3s ease-in forwards;
+  animation: tom-6 1.5s ease-in forwards, tom-6-run 1.5s 3.5s ease-in forwards;
 }
 
 @keyframes tom-6 {

@@ -233,7 +233,7 @@ itemArray.forEach((item, i) => {
 
                 setTimeout(() => {
                   camera.classList.add("camera-trapdoor")
-                }, 1000);
+                }, 3000);
 
                 
                 clickCounter = 0;
