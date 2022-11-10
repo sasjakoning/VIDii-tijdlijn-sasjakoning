@@ -228,13 +228,13 @@ itemArray.forEach((item, i) => {
                 }, 1200);
                 setTimeout(() => {
                   trapDoorDoor.classList.add("trapdoor-open")
+                  basement.classList.add("timeline")
                 }, 4000);
 
                 setTimeout(() => {
                   camera.classList.add("camera-trapdoor")
                 }, 1000);
 
-                basement.classList.add("timeline")
                 
                 clickCounter = 0;
                 actionCounter++;
@@ -246,66 +246,3 @@ itemArray.forEach((item, i) => {
     }
   });
 });
-
-// let painting1Counter = 0;
-
-// painting1.addEventListener("click", () => {
-//     if(painting1Counter <= 0){
-//         painting1.classList.remove("wiggle")
-//         painting1.classList.add("painting1-timeline")
-//         console.log("show text")
-//         painting1Counter++
-//     }else {
-//         console.log("Move character")
-//         jerry.classList.add("jerry-1")
-//         painting1.classList.remove("painting1-timeline")
-//         painting1Counter = 0;
-
-//         painting2.classList.add("wiggle")
-//     }
-// })
-
-// let painting2Counter = 0;
-
-// painting2.addEventListener("click", () => {
-//     if(painting2Counter <= 0){
-//         console.log("show text")
-//         painting2Counter++
-//         painting2.classList.remove("wiggle")
-//     }else if (painting2Counter >= 1 && jerry.classList.contains("jerry-1")) {
-//         console.log("Move character")
-//         painting2.classList.add("painting2-fall")
-//         jerry.classList.add("jerry-2")
-//         painting2Counter = 0;
-
-//     }
-// })
-
-// let closetCounter = 0;
-
-// console.log(closet.childNodes[3].childNodes)
-
-// closet.addEventListener("click", () => {
-//     console.log("clicked")
-//     if(closetCounter <= 0 && jerry.classList.contains("jerry-2")){
-//         closet.childNodes[3].childNodes[3].classList.add("closet-door")
-//         closetCounter++
-//     }else if (closetCounter >= 1 && jerry.classList.contains("jerry-2")) {
-//         // jerry.classList.add("jerry-2")
-//         closetCounter = 0;
-//     }
-// })
-
-// let bookshelfCounter = 0;
-
-// bookshelf.addEventListener("click", () => {
-//     console.log("clicked")
-//     if(bookshelfCounter <= 0 && jerry.classList.contains("jerry-2")){
-//         bookshelfCounter++
-//     }else if (bookshelfCounter >= 1 && jerry.classList.contains("jerry-2")) {
-//         bookshelf.classList.add("bookshelf-fall")
-//         bowlingBall.classList.add("bowlingball-fall")
-//         // jerry.classList.add("jerry-2")
-//         bookshelfCounter = 0;
-//     }
-// })
