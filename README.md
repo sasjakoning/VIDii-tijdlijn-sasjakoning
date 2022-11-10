@@ -116,7 +116,7 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 - 1992
   - Release "Tom and Jerry the movie" gemaakt door Film Roman. De film flopte echter hard.
 - 2001
-  - Release "Tom and Jerry The Mansion Cat" Overname Hanna Barbera door Warner Brothers, tiend agen voor de dood van Hanna
+  - Release "Tom and Jerry The Mansion Cat" Overname Hanna Barbera door Warner Brothers, tien dagen voor de dood van Hanna
 - 2005
   - Laatste release van een short, "The Karate Guard". Een aantal maanden na release overleed Barbera.
 - 2006-2008
