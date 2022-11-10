@@ -1,13 +1,4 @@
 # Procesverslag
-Markdown is een simpele manier om HTML te schrijven.  
-Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-Nb. De standaardstructuur en de spartaanse opmaak van de README.md zijn helemaal prima. Het gaat om de inhoud van je procesverslag. Besteedt de tijd voor pracht en praal aan je website.
-
-Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard open zetten. Fijn om dat steeds voor de relevante stuk(ken) te doen.
-
-
-
 
 ## Jij
 
@@ -15,7 +6,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 Sasja Koning
 
 #### Je startniveau:
-Mijn startniveau is: 	~~Zwart~~ Blauw
+Mijn startniveau is: 	Zwart
 
 
 
@@ -46,10 +37,10 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
  
 </details>
 
-<details open>
+<details>
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
 
-  ### De eerste versies/schetsen:
+  ### De eerste versies/schetsen en Feedback sessie 1:
   Voor mijn eerste schetsen was ik uitgekomen op drie verschillende thema's. Op deze ideeen heb ik feedback gekregen van Ine van den Hoven.
 
   1: **Donald Duck**
@@ -81,10 +72,9 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Ik wil beter een verhaal kunnen vertellen via een website.
+  - Ik wil complexe animaties leren maken.
+  - Ik wil nieuwe CCS en SVG technieken leren.
  
 </details>
 
@@ -126,40 +116,16 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 - 2021
   - Release Tom and Jerry film in theaters
 
+## Tussentijdse screenshot
 
-## Voortgang/Feedback 1
-
-<details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
-
-  ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
-
-
-  ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
-
-
-  ### Bevinding 3:
-  ...
-
-</details>
-
+<img src="./readme-images/feedback1.gif" width="675px" alt="gif van website tussentijds">
 
 
 
 ## Voortgang/Feedback 2
 
 <details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+  <summary>Mijn bevindingen + wijzigingen</summary>
 
   Op maandag 7 november heb ik samen met mede-student Sandra een feedbacksessie gehouden. Voor deze sessie hebben wij een checklist aangehouden voor details, verzorging en nette code.
 
@@ -201,26 +167,32 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 ## Voortgang/Feedback 3
 
 <details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+  <summary>Mijn bevindingen + wijzigingen</summary>
+
+  Op woensdag 9 november heb ik samen met een kennis gekeken naar de website.
+
+  Onderstaand is een GIF van mijn werk getoond tijdens deze feedback sessie:
+  <br>
+  <img src="./readme-images/feedback3.gif" width="675px" alt="gif van website tussentijds">
   
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Wanneer het scherm te klein werdt viel alle css uit elkaar. Dit omdat alles nog af hing van een enkele media query.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
+  Door de media queries te verwijderen is de website meer responsive geworden. Deze werkt echter alsnog niet goed op schermen kleiner dan een desktop.
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  De interactieve elements waren nog niet goed tab-baar en toonde nog geen correcte informatie.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
-
+  door sommige elementen te veranderen van divs naar buttons en de correcte teksten toe te voegen kan ik deze problemen oplossen.
 
   ### Bevinding 3:
-  ...
+  Er mistte nog easter eggs in het ontwerp.
+
+  #### oplossing:
+  Deze ga ik toevoegen door onder andere tom and jerry klikbaar te maken met een kleine animatie.
 
 </details>
 
@@ -229,23 +201,24 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 
 ## Reflectie
 
-<details>
+<details open>
   <summary>Mijn eindresultaat & persoonlijke ontwikkeling</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="final ontwerp">
+  <img src="./readme-images/finished-screenshot.png" width="675px" alt="eindproduct">
+  <img src="./readme-images/finished-screenshot2.png" width="675px" alt="eindproduct">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
+  Tijdens dit project heb ik veel geleerd over verschillende technieken en nieuwe html/css/javascript properties. Na even moeite met de keuze maken over welk karakter ik wou gaan gebruiken heb ik erg tevreden over mijn keuze voor Tom and jerry. Ik vond het leuk om mijn eigen stijl in dit project te verwerken door zelf getekende achtergronden en veel animaties. Ik wou graag beter een verhaal vertellen door middel van een website en dit is mij redelijk goed gelukt.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  <img src="./readme-images/finished-gif1.gif" width="675px" alt="gif van website">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatje(s)
+  Ik was al snel opgewonden over mijn idee. Dit bleek echter té complex te zijn voor de hoeveelheid tijd die ik had om het te maken. Er zijn een boel dingen die mooier hadden gekund zoals de illustraties, karakters en css elementen. Deze ander halve week hebben mij vooral een mooi concept geleverd maar helaas geen eindresultaat. De kans is groot dat ik verder zal werken aan dit project om het écht portfolio waardig te maken.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  <img src="./readme-images/finished-gif2.gif" width="675px" alt="gif van website">
 </details>
 
 
@@ -254,12 +227,16 @@ Mijn startniveau is: 	~~Zwart~~ Blauw
 ## Bronnenlijst
 
 <details open>
-<summary>continu bijhouden terwijl je werkt</summary>
+<summary>Bronnen</summary>
 
 Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
-1. bron 1
-2. bron 2
-3. ...
+1. https://css-tricks.com/container-units-should-be-pretty-handy/
+2. https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path
+3. https://developer.mozilla.org/en-US/docs/Web/CSS/offset-distance
+4. https://developer.mozilla.org/en-US/docs/Web/CSS/offset-rotate
+5. https://fonts.google.com/specimen/Gochi+Hand
+6. Regelmatig sparren met mede-studenten
+7. Afbeeldingen gebruikt in de tijdlijn zijn rechtenvrij.
 
 </details>
