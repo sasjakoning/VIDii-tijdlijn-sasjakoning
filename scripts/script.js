@@ -25,6 +25,10 @@ const trapDoorDoor = document.querySelector(
   mainSelector + "(3) > figure:nth-of-type(2) > section > div:last-of-type"
 );
 
+const basement = document.querySelector(
+  mainSelector + "(4) > figure"
+);
+
 const logo = document.querySelector("header > img")
 
 const tom = document.querySelector(
@@ -43,7 +47,6 @@ const itemArray = [
   painting3,
   trapDoor,
 ];
-console.log(itemArray);
 
 painting1.classList.add("wiggle");
 
@@ -59,11 +62,11 @@ itemArray.forEach((item, i) => {
         if(actionCounter <= 0){
             if (clickCounter <= 0) {
                 painting1.classList.remove("wiggle");
-                painting1.classList.add("painting1-timeline");
+                painting1.classList.add("timeline");
       
                 clickCounter++;
               } else {
-                painting1.classList.remove("painting1-timeline");
+                painting1.classList.remove("timeline");
                 painting2.classList.add("wiggle");
 
                 jerry.classList.add("jerry-1");
@@ -83,11 +86,13 @@ itemArray.forEach((item, i) => {
         if (actionCounter == 1) {
           if (clickCounter <= 0) {
             painting2.classList.remove("wiggle");
+            painting2.classList.add("timeline");
 
             clickCounter++;
           } else {
             closet.classList.add("wiggle");
             painting2.classList.add("painting2-fall");
+            painting2.classList.remove("timeline");
 
             jerry.classList.add("jerry-2");
             setTimeout(() => {
@@ -110,24 +115,21 @@ itemArray.forEach((item, i) => {
             if (clickCounter <= 0) {
                 closet.classList.remove("wiggle");
                 setTimeout(() => {
-                    closet.childNodes[7].childNodes[3].classList.add("closet-door-open");
+                    closet.childNodes[5].childNodes[3].classList.add("closet-door-open");
                 }, 1700);
                 jerry.classList.add("jerry-3");
                 setTimeout(() => {
                     tom.classList.add("tom-2")
+                    camera.classList.add("camera-closet")
                 }, 1000);
 
                 setTimeout(() => {
-                  closet.childNodes[3].classList.add("closet-image-open");
-              }, 2500);
+                  closet.classList.add("timeline");
+                }, 2200);
 
-                setTimeout(() => {
-                  camera.classList.add("camera-closet")
-                }, 1000);
-
-      
                 clickCounter++;
               } else {
+                closet.classList.remove("timeline");
                 jerry.classList.add("jerry-4"); 
 
                 bookshelf.classList.add("wiggle");
@@ -149,10 +151,10 @@ itemArray.forEach((item, i) => {
                   tom.classList.add("tom-3")
                 }, 200);
 
-                closet.childNodes[7].childNodes[3].classList.add("closet-door-close");
+                closet.childNodes[5].childNodes[3].classList.add("closet-door-close");
 
                 setTimeout(() => {
-                  bookshelf.childNodes[3].classList.add("bookshelf-image-open")
+                  bookshelf.classList.add("timelineAlt");
                 }, 200);
       
                 clickCounter++;
@@ -162,6 +164,8 @@ itemArray.forEach((item, i) => {
                 setTimeout(() => {
                     tom.classList.add("tom-4")
                 }, 1800);
+
+                bookshelf.classList.remove("timelineAlt");
 
                 bookshelf.classList.add("bookshelf-fall")
                 bowlingBall.classList.add("bowlingball-fall")
@@ -183,11 +187,13 @@ itemArray.forEach((item, i) => {
         if(actionCounter == 4) {
             if (clickCounter <= 0) {
                 painting3.classList.remove("wiggle");
+                painting3.classList.add("timeline");
       
                 clickCounter++;
               } else {
                 trapDoor.classList.add("wiggle");
                 jerry.classList.add("jerry-6");
+                painting3.classList.remove("timeline");
                 setTimeout(() => {
                   tom.classList.add("tom-5")
                 }, 500);
@@ -209,11 +215,13 @@ itemArray.forEach((item, i) => {
             if (clickCounter <= 0) {
                 trapDoor.classList.remove("wiggle");
                 jerry.classList.add("jerry-7");
+                trapDoor.classList.add("timelineAlt");
       
                 clickCounter++;
               } else {
                 jerry.classList.add("jerry-8");
                 tom.classList.add("tom-6")
+                trapDoor.classList.remove("timelineAlt");
 
                 setTimeout(() => {
                   trapDoorDoor.classList.add("trapdoor-close")
@@ -226,6 +234,8 @@ itemArray.forEach((item, i) => {
                   camera.classList.add("camera-trapdoor")
                 }, 1000);
 
+                basement.classList.add("timeline")
+                
                 clickCounter = 0;
                 actionCounter++;
               }
