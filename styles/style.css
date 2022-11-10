@@ -39,6 +39,8 @@ button:not([disabled]) {
   --red: rgb(246, 8, 8);
   --darkred: rgb(161, 9, 10);
 
+  --lightblue: rgb(171, 223, 220);
+
   --black: rgb(22, 22, 22);
   --white: rgb(246, 245, 245);
 
@@ -59,7 +61,7 @@ body {
   display: grid;
   place-items: center;
 
-  background: linear-gradient(0deg, rgb(104, 44, 36) 0%, rgb(104, 44, 36) 20%, rgba(50,152,69,1) 20%, rgba(50,152,69,1) 30%, rgb(171, 223, 220) 30%, rgb(171, 223, 220) 100%);
+  background: var(--lightblue);
   overflow: hidden;
 }
 
@@ -134,12 +136,7 @@ main > ul > li:nth-of-type(4) {
   transform: translateY(-4.4em);
 }
 
-
-
-
-
-
-
+/* timeline popups */
 li > figure > article {
   display: none;
 }
@@ -186,10 +183,7 @@ li > figure > article {
 }
 
 
-
-
-
-
+/* --- */
 
 
 /* Tom and jerry frame */
@@ -267,7 +261,7 @@ main {
     transform-origin: 51em 41em;
   }
   to {
-    transform-origin: 20em 41em;
+    transform-origin: 13em 41em;
   }
 }
 
@@ -278,10 +272,10 @@ main {
 
 @keyframes camera-shelf {
   from {
-    transform-origin: 20em 41em;
+    transform-origin: 13em 41em;
   }
   to {
-    transform-origin: 20em 68em;
+    transform-origin: 13em 68em;
   }
 }
 
@@ -292,39 +286,38 @@ main {
 
 @keyframes camera-painting3 {
   from {
-    transform-origin: 20em 68em;
+    transform-origin: 13em 68em;
   }
   to {
-    transform-origin: 51em 68em;
+    transform-origin: 55em 68em;
   }
 }
 
 .camera-trapdoor {
   scale: 2;
-  animation: camera-trapdoor 1s forwards, camera-trapdoor-2 1s 1s forwards;
+  animation: camera-trapdoor 1s forwards, camera-trapdoor-2 1s 3.5s forwards;
 }
 
 @keyframes camera-trapdoor {
   from {
-    transform-origin: 51em 68em;
+    transform-origin: 55em 68em;
   }
   to {
-    transform-origin: 51em 88em;
+    transform-origin: 55em 88em;
   }
 }
 
 @keyframes camera-trapdoor-2 {
   from {
-    transform-origin: 51em 88em;
+    transform-origin: 55em 88em;
   }
   to {
     transform-origin: 20em 88em;
   }
 }
 
-
-
 /* --- */
+
 
 /* TOM */
 main > section > button:nth-of-type(1){
@@ -463,7 +456,7 @@ main > section > button:nth-of-type(1){
 /* Trapdoor */
 
 .tom-6 {
-  animation: tom-6 1.5s ease-in forwards, tom-6-run 1s 5s ease-in forwards;
+  animation: tom-6 1.5s ease-in forwards, tom-6-run 1.5s 3s ease-in forwards;
 }
 
 @keyframes tom-6 {
@@ -673,7 +666,7 @@ svg {
 }
 
 .jerry-8 {
-  animation: jerry-8 2s ease-in forwards;
+  animation: jerry-8 2s ease-in forwards, jerry-8-2 .5s 3.8s ease-in forwards;
 }
 
 @keyframes jerry-8 {
@@ -681,7 +674,22 @@ svg {
     offset-distance: 84%;
   }
   to {
+    offset-distance: 99%;
+  }
+}
+
+@keyframes jerry-8-2 {
+  from {
+    offset-distance: 99%;
+    opacity: 1;
+  }
+  90% {
+    offset-distance: 99.8%;
+    opacity: 1;
+  }
+  to {
     offset-distance: 100%;
+    opacity: 0;
   }
 }
 
@@ -697,11 +705,7 @@ button {
   border: none;
 }
 
-button:focus {
-  /* outline: none; */
-}
-
-li > figure:hover{
+li:not(:last-of-type) > figure:hover{
   box-shadow: 0 0 1em .5em rgba(255, 255, 0, 0.2) !important;
 }
 
@@ -734,7 +738,6 @@ main > ul > li:nth-of-type(1) > figure:nth-of-type(1):not(article) {
   left:9%;
 
   margin: 0;
-  /* transform: perspective(20em) rotateY(30deg) rotateX(7deg) rotateZ(4deg); */
   scale: 1;
   
   background-color: beige;
@@ -765,7 +768,8 @@ main > ul > li:nth-of-type(1) > figure:nth-of-type(1) > article::after {
 
 main > ul > li:nth-of-type(1) > aside,
 main > ul > li:nth-of-type(2) > aside,
-main > ul > li:nth-of-type(3) > aside {
+main > ul > li:nth-of-type(3) > aside,
+main > ul > li:nth-of-type(4) > aside {
   width: 1em;
   height: 1.5em;
   position: absolute;
@@ -797,6 +801,13 @@ main > ul > li:nth-of-type(2) > aside:last-of-type {
 main > ul > li:nth-of-type(3) > aside {
   bottom: 43%;
   right: 74%;
+}
+
+/* hole basement */
+main > ul > li:nth-of-type(4) > aside {
+  bottom: 27.5%;
+  right: 88.6%;
+  transform: skewY(-48deg);
 }
 
 /* --- */
