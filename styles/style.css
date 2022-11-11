@@ -16,10 +16,10 @@
 *, *::after, *::before {
   box-sizing:border-box;  
   padding: 0;
+  margin:0;
 }
 
 body {
-  margin:0;
   font-family: "gochiHand-Regular", sans-serif;
 }
 
@@ -64,14 +64,62 @@ body {
   background: var(--lightblue);
 }
 
+main {
+  width: clamp(20em, 100%, 60em);
+  position: relative;
+  border: 2px solid red;
+}
+
+main img {
+  width: 100%;
+  display: block;
+  border: 2px solid blue;
+}
+
+picture {
+  display: block;
+}
+
+main > section {
+  width: 100%;
+  position: absolute;
+}
+
 
 /*****************/
 /* HOUSE STYLING */
 /*****************/
 
+main > ol {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+main > ol > li:nth-of-type(2) {
+  transform: translateY(-3.1em);
+}
+
+main > ol > li:nth-of-type(3) {
+  transform: translateY(-3.27em);
+}
+
+main > ol > li:nth-of-type(4) {
+  transform: translateY(-4.5em);
+}
+
 /*****************/
 /* CHARACTER TOM */
 /*****************/
+
+main > section > button:nth-of-type(1) {
+  width: 5em; height: 5em;
+  position: absolute;
+  background-color: red;
+  top: 50%;
+  left: 50%;
+}
 
 /*******************/
 /* CHARACTER JERRY */
